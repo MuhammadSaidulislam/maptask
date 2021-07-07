@@ -57,7 +57,10 @@
           <li class="form-group NavmarginSet">
             <div class="form-check">
               <label class="form-check-label" style="color:#4C84C5;">
-                <span> Growth Last:</span>
+           
+                <span id="growthcc">Growth Last:</span>
+                <span id="forecastcc">ForeCast Last:</span>
+               
               </label>
             </div>
           </li>
@@ -126,7 +129,7 @@
           </a>
         </li>
         <li class="inbox">
-          <a href="#" onclick="filterHide()">
+          <a onclick="show_hide()">
             <i class="fa fa-filter">
               <span class="icon-bg"></span>
             </i>
@@ -220,16 +223,17 @@
             <div class="col-md-6 centerFooter">
               <div class="flex-container">
                 <div class="flex-item-left">
-                  <a class="dropbtn risk">
+                  <a class="dropbtn risk" onclick="growth_hide()">
                     <i class="fa fa-file"></i>
                     <p id="ForecastHide">ForeCast</p>
+                    <p id="growthShow">Growth</p>
                   </a>
                 </div>
 
                 <!-- Indicators -->
                 <div class="flex-item-left">
                   <div class="dropdown">
-                    <a onclick="indicators()" class="dropbtn indicators">
+                    <a onclick="footerShow('indicators')" class="dropbtn indicators">
                       <i class="fa fa-tachometer-alt"></i>
                       <p>Indicators</p>
                     </a>
@@ -288,7 +292,7 @@
                 <!-- Housing -->
                 <div class="flex-item-left">
                   <div class="dropdown">
-                    <a onclick="housing()" class="dropbtn housing">
+                    <a onclick="footerShow('housing')" class="dropbtn housing">
                       <i class="fa fa-house-user"></i>
                       <p>Housing</p>
                     </a>
@@ -347,7 +351,7 @@
                 <!-- Risk -->
                 <div class="flex-item-left">
                   <div class="dropdown">
-                    <a onclick="risk()" class="dropbtn risk">
+                    <a onclick="footerShow('risk')" class="dropbtn risk">
                       <i class="fa fa-exclamation-triangle"></i>
                       <p>Risk</p>
                     </a>
@@ -407,7 +411,7 @@
                 <div class="flex-item-left">
                   <div class="dropdown">
                     <div class="dropdown">
-                      <a onclick="community()" class="dropbtn community">
+                      <a onclick="footerShow('community')" class="dropbtn community">
                         <i class="fa fa-users"></i>
                         <p>Community</p>
                       </a>
@@ -473,7 +477,7 @@
 
                   <div class="dropdown">
                     <div class="dropdown">
-                      <a onclick="enroll()" class="dropbtn enroll">
+                      <a onclick="footerShow('enroll')" class="dropbtn enroll">
                         <i class="fa fa-user-plus"></i>
                         <p>Enrollments</p>
                       </a>
@@ -611,29 +615,36 @@
 
         <!-- Boundaries -->
         <div class="boundaries">
-            <div class="boundaries-item-left">
-              <div class="dropdown">
-                <a onclick="boundaries()" class="innerBound">
-                 <img src="images/map.png" alt="" width="100%" height="100%">
-                </a>
-                <div id="boundaries" class="boundaries-content">
-                  
-                  <div class="flex-box">
-                    <div class="boundaries-text">
-                      <span>Selct Geographical <br> Boundaries</span>
-                    </div>
-                    <div class="boundaries-toggle">
-                      <div class="button-switch">
-                        <input type="checkbox" id="switch-blue" class="switch" checked />
-                        <label for="switch-blue" class="lbl-off">Automatic</label>
-                        <label for="switch-blue" class="lbl-on">Manual</label>
-                      </div>
+          <div class="boundaries-item-left">
+            <div class="dropdown">
+              <a onclick="boundaries()" class="innerBound">
+                <img src="images/map.png" alt="" width="100%" height="100%">
+              <!-- <span class="imgfooter">Boundaries</span> -->
+              </a>
+              <div id="boundaries" class="boundaries-content">
+
+                <div class="flex-box">
+                  <div class="boundaries-text">
+                    <span>Selct Geographical <br> Boundaries</span>
+                  </div>
+                  <div class="boundaries-toggle">
+                    <div class="button-switch">
+                      <input type="checkbox" id="switch-blue" class="switch" checked />
+                      <label for="switch-blue" class="lbl-off">Automatic</label>
+                      <label for="switch-blue" class="lbl-on">Manual</label>
                     </div>
                   </div>
-                 <hr>
                 </div>
+
+                <button type="button" class="btn btn-light marginSet">Block <i class="fa fa-exclamation-circle"></i></button>
+                <button type="button" class="btn btn-light marginSet">Track <i class="fa fa-exclamation-circle"></i></button>
+                <button type="button" class="btn btn-active marginSet">Zip Code <i class="fa fa-exclamation-circle"></i></button>
+                <button type="button" class="btn btn-light marginSet">Country <i class="fa fa-exclamation-circle"></i></button>
+                <button type="button" class="btn btn-light marginSet">MSA <i class="fa fa-exclamation-circle"></i></button>
+                <button type="button" class="btn btn-light marginSet">STATE <i class="fa fa-exclamation-circle"></i></button>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </div>

@@ -35,12 +35,56 @@ function growthHide() {
 
 
 
-function filterHide() {
-  var x = document.getElementById("filterdetail");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+// function filterHide() {
+//   var x = document.getElementById("filterdetail");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+// function filterHide() {
+//   document.getElementById("filterdetail").style.display= "block";
+// }
+
+// $('#filter').click(function()
+// {   
+//     $("#filterdetail").toggle();     
+// });
+
+
+var a = 1;
+function show_hide() {
+  console.log(a);
+  if (a == 1) {
+    document.getElementById("filterdetail").style.display = "block";
+    return a = 0;
+  }
+  else {
+    document.getElementById("filterdetail").style.display = "none";
+    return a = 1;
+  }
+}
+
+
+
+var b = 1;
+function growth_hide() {
+  console.log(a);
+  if (a == 1) {
+    document.getElementById("growthShow").style.display = "block";
+    document.getElementById("ForecastHide").style.display = "none";
+    document.getElementById("growthcc").style.display = "none";
+    document.getElementById("forecastcc").style.display = "block";
+    return a = 0;
+  }
+  else {
+    document.getElementById("growthShow").style.display = "none";
+    document.getElementById("ForecastHide").style.display = "block";
+    document.getElementById("growthcc").style.display = "block";
+    document.getElementById("forecastcc").style.display = "none";
+    return a = 1;
   }
 }
 
@@ -48,7 +92,6 @@ function filterHide() {
 // growth value show
 // Indicators
 $(document).ready(function () {
-
   $(document).on('change', '.getIndicators input', function (e) {
     var $this = $(this),
       value = $this.val();
@@ -245,24 +288,34 @@ var myChart = new Chart(ctx1, {
 });
 
 
+function footerShow(id) {
+  let allid = ['indicators', 'housing','community','enroll','risk']
+  document.getElementById(id).classList.toggle("show");
+  for (let i = 0; i < allid.length; i++) {
+    if (allid[i] !== id) {
+      document.getElementById(allid[i]).classList.remove("show");
+      console.log(allid[i]);
+    }
+  }
+}
+
+// function indicators() {
+//   document.getElementById("indicators").classList.toggle("showw");
+// }
+// function housing() {
+//   document.getElementById("housing").classList.toggle("show");
+// }
+// function community() {
+//   document.getElementById("community").classList.toggle("show");
+// }
+// function enroll() {
+//   document.getElementById("enroll").classList.toggle("show");
+// }
+// function risk() {
+//   document.getElementById("risk").classList.toggle("show");
+// }
 
 
-function indicators() {
-  document.getElementById("indicators").classList.toggle("show");
-}
-function housing() {
-  document.getElementById("housing").classList.toggle("show");
-}
-
-function community() {
-  document.getElementById("community").classList.toggle("show");
-}
-function enroll() {
-  document.getElementById("enroll").classList.toggle("show");
-}
-function risk() {
-  document.getElementById("risk").classList.toggle("show");
-}
 function boundaries() {
   document.getElementById("boundaries").classList.toggle("show");
 }
