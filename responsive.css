@@ -1,0 +1,18 @@
+@media screen and (min-width: 750px) {
+    #searchBox{
+      width: 50px !important;
+    }
+    .navBox{
+      width: 72%;
+    }
+    .navbar {
+        position:fixed;
+        width: 100%;
+        min-height:50px;
+        margin-bottom:0px;
+        border:1px solid transparent;
+        opacity: 1;
+        z-index: 999999;
+        background-color: red;
+       }
+  }

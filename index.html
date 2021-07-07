@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ZipAnalysis</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- <link rel="stylesheet" href="responsive.css"> -->
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="index.html">
+          <img src="images/Icon Only new Blue color.png" alt="">
+          <span>ZipAnalysis</span>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left searchBox" id="searchBox" role="search">
+          <div class="search">
+            <input type="text" class="searchTerm" placeholder="Address, Zip Code or City">
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right navBox">
+          <li class="form-group">
+            <div class="form-check paddOff">
+              <p>Select Time Period</p>
+              <input class="form-check-input" type="checkbox" value="" id="yearly">
+              <label class="form-check-label" for="yearly">
+                2021 Yearly Data
+              </label>
+            </div>
+
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <label class="form-check-label" style="color:#4C84C5;">
+                <span> Growth Last:</span>
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="6month">
+              <label class="form-check-label check" for="6month">
+                6 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="12month">
+              <label class="form-check-label check" for="12month">
+                12 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="24month">
+              <label class="form-check-label check" for="24month">
+                24 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="36month">
+              <label class="form-check-label check" for="36month">
+                36 Months
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="wrapper" class="active">
+    <div id="sidebar-wrapper">
+      <ul>
+        <li class="inbox">
+          <a href="#">
+            <i class="fa fa-home">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Properties</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="index.html">
+            <i class="fa fa-map-marked">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Map</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="compare.html">
+            <i class="fa fa-line-chart">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Compare</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="#" onclick="filterHide()">
+            <i class="fa fa-filter">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Filter</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="#" onclick="openNav()">
+            <i class="fa fa-file-alt">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Report</p>
+          </a>
+        </li>
+        <li class="bottomLogout">
+          <img
+            src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            alt="">
+          <a href="#" class="upgrade">
+            <p>Upgrade</p>
+          </a>
+          <a href="#" class="logout">
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Page content -->
+    <div id="page-content-wrapper">
+      <!-- Keep all page content within the page-content inset div! -->
+      <div class="page-content inset" id="mainnn">
+        <div class="mapPosition">
+          <div class="row">
+
+            <div class="mapLocation">
+              <!-- <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14617.387009585536!2d90.45594321852968!3d23.663554557698774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0b477b7d59f%3A0xef2e174b3531b720!2sPagla%2C%20Fatullah!5e0!3m2!1sen!2sbd!4v1625457616665!5m2!1sen!2sbd"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+             -->
+              <img src="images/map.png" width="100%" height="100%" alt="">
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <!-- report section start -->
+        <div id="mySidenav" class="sidenav">
+          <h5>Growth rate: Last 6 months</h5>
+          <div class="viewReport">
+            <p>San Jose, CA, United States</p>
+            <p>San Jose CA 95113</p>
+            <p>Growth Rank: #20</p>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col">Median Income</th>
+                  <th scope="col">23.83%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Median Disposable Income</td>
+                  <td>23.55%</td>
+                </tr>
+                <tr>
+                  <td>Unemployment Rate</td>
+                  <td>147.37%</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="cahrtONe">
+              <canvas id="myChart"></canvas>
+              <p class="text-center">Median Income</p>
+            </div>
+            <div class="cahrtTwo">
+              <canvas id="myChartTwo"></canvas>
+            </div>
+            <div class="reportBtn text-center">
+              <button class="btn btn-info">Generate Report</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- report section  end -->
+        <div id="positionSet">
+          <div class="row">
+            <div class="col-md-6 centerFooter">
+              <div class="flex-container">
+                <div class="flex-item-left">
+                  <a class="dropbtn risk">
+                    <i class="fa fa-file"></i>
+                    <p id="ForecastHide">ForeCast</p>
+                  </a>
+                </div>
+
+                <!-- Indicators -->
+                <div class="flex-item-left">
+                  <div class="dropdown">
+                    <a onclick="indicators()" class="dropbtn indicators">
+                      <i class="fa fa-tachometer-alt"></i>
+                      <p>Indicators</p>
+                    </a>
+                    <div id="indicators" class="dropdown-content">
+                      <div class="form-check getIndicators">
+                        <input class="form-check-input check" type="checkbox" value="Median Income" id="Indomedian">
+                        <label class="form-check-label check" for="Indomedian">
+                          Median Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgIncome">
+                          average Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
+                        <label class="form-check-label" for="medianNet">
+                          Median Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgNet"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgNet">
+                          Average Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getIndicators">
+                        <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                          id="IndomedianDis">
+                        <label class="form-check-label check" for="IndomedianDis">
+                          Median Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Average Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getIndicators">
+                        <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                          id="Indounemployment">
+                        <label class="form-check-label check" for="Indounemployment">
+                          Unemployment Rate
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Housing -->
+                <div class="flex-item-left">
+                  <div class="dropdown">
+                    <a onclick="housing()" class="dropbtn housing">
+                      <i class="fa fa-house-user"></i>
+                      <p>Housing</p>
+                    </a>
+                    <div id="housing" class="dropdown-content">
+                      <div class="form-check getHousing">
+                        <input class="form-check-input check" type="checkbox" value="Median Income" id="housingmedian">
+                        <label class="form-check-label check" for="housingmedian">
+                          Median Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgIncome">
+                          average Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
+                        <label class="form-check-label" for="medianNet">
+                          Median Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgNet"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgNet">
+                          Average Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getHousing">
+                        <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                          id="housingmedianDis">
+                        <label class="form-check-label check" for="housingmedianDis">
+                          Median Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Average Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getHousing">
+                        <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                          id="housingunemployment">
+                        <label class="form-check-label check" for="housingunemployment">
+                          Unemployment Rate
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Risk -->
+                <div class="flex-item-left">
+                  <div class="dropdown">
+                    <a onclick="risk()" class="dropbtn risk">
+                      <i class="fa fa-exclamation-triangle"></i>
+                      <p>Risk</p>
+                    </a>
+                    <div id="risk" class="dropdown-content">
+                      <div class="form-check getRisk">
+                        <input class="form-check-input check" type="checkbox" value="Median Income" id="riskmedian">
+                        <label class="form-check-label check" for="riskmedian">
+                          Median Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgIncome">
+                          average Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
+                        <label class="form-check-label" for="medianNet">
+                          Median Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgNet"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgNet">
+                          Average Net Worth
+                        </label>
+                      </div>
+                      <div class="form-check getRisk">
+                        <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                          id="riskmedianDis">
+                        <label class="form-check-label check" for="riskmedianDis">
+                          Median Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getValue">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Average Disposable Income
+                        </label>
+                      </div>
+                      <div class="form-check getRisk">
+                        <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                          id="riskunemployment">
+                        <label class="form-check-label check" for="riskunemployment">
+                          Unemployment Rate
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Community -->
+                <div class="flex-item-left">
+                  <div class="dropdown">
+                    <div class="dropdown">
+                      <a onclick="community()" class="dropbtn community">
+                        <i class="fa fa-users"></i>
+                        <p>Community</p>
+                      </a>
+                      <div id="community" class="dropdown-content">
+                        <div class="form-check getCommunity">
+                          <input class="form-check-input check" type="checkbox" value="Median Income"
+                            id="communitymedian">
+                          <label class="form-check-label check" for="communitymedian">
+                            Median Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgIncome">
+                            average Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input" type="checkbox" value="" id="medianNet"
+                            onclick="return false;">
+                          <label class="form-check-label" for="medianNet">
+                            Median Net Worth
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgNet"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgNet">
+                            Average Net Worth
+                          </label>
+                        </div>
+                        <div class="form-check getCommunity">
+                          <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                            id="communitymedianDis">
+                          <label class="form-check-label check" for="communitymedianDis">
+                            Median Disposable Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Average Disposable Income
+                          </label>
+                        </div>
+                        <div class="form-check getCommunity">
+                          <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                            id="communityunemployment">
+                          <label class="form-check-label check" for="communityunemployment">
+                            Unemployment Rate
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+                <!-- Enrollments -->
+                <div class="flex-item-left">
+
+                  <div class="dropdown">
+                    <div class="dropdown">
+                      <a onclick="enroll()" class="dropbtn enroll">
+                        <i class="fa fa-user-plus"></i>
+                        <p>Enrollments</p>
+                      </a>
+                      <div id="enroll" class="dropdown-content">
+                        <div class="form-check getEnroll">
+                          <input class="form-check-input check" type="checkbox" value="Median Income" id="enrollmedian">
+                          <label class="form-check-label check" for="enrollmedian">
+                            Median Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgIncome">
+                            average Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input" type="checkbox" value="" id="medianNet"
+                            onclick="return false;">
+                          <label class="form-check-label" for="medianNet">
+                            Median Net Worth
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgNet"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgNet">
+                            Average Net Worth
+                          </label>
+                        </div>
+                        <div class="form-check getEnroll">
+                          <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                            id="enrollmedianDis">
+                          <label class="form-check-label check" for="enrollmedianDis">
+                            Median Disposable Income
+                          </label>
+                        </div>
+                        <div class="form-check getValue">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Average Disposable Income
+                          </label>
+                        </div>
+                        <div class="form-check getEnroll">
+                          <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                            id="enrollunemployment">
+                          <label class="form-check-label check" for="enrollunemployment">
+                            Unemployment Rate
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- report show start -->
+        <div class="growthPoint">
+          <div class="growRate" id="growthRate">
+            <a style="font-size:15px;cursor:pointer; float: left;" id="openArrow" onclick="openNav()"> <i
+                class="fa fa-caret-left"></i></a>
+            <a style="font-size:15px;cursor:pointer; float: left;" href="javascript:void(0)" id="closeArrow"
+              onclick="closeNav()">
+              <i class="fa fa-caret-left"></i></a>
+            <a id="growthBtn" onclick="grwothInfo()"> <i class="fa fa-sun"></i></a>
+          </div>
+          <div class="growInfo" id="growthBox">
+            <div class="closeBtn">
+              <a onclick="growthHide()"><i class="fa fa-times"></i></a>
+              <span>Growth rate: Last 6 months</span>
+            </div>
+            <hr>
+            <div class="growthDetail" id="showValue">
+            </div>
+            <div class="growthRating">
+              <div class="setValue leftPosition">100</div>
+              <div class="starBox1 leftPosition"></div>
+              <div class="starBox2 leftPosition"></div>
+              <div class="starBox3 leftPosition"></div>
+              <div class="starBox4 leftPosition"></div>
+              <div class="starBox5 leftPosition"></div>
+              <div class="starBox6 leftPosition"></div>
+              <div class="starBox7 leftPosition"></div>
+              <div class="setValue leftPosition">1000</div>
+            </div>
+          </div>
+        </div>
+        <!-- report show end -->
+
+        <!-- filter -->
+        <div class="filterdetail" id="filterdetail">
+          <div style="max-width: 500px; display: block; margin: auto;">
+            <div class="game-progress-bar-container game-count-5">
+              <div class="progress-steps-section">
+                <ul class="progress-steps">
+                  <li>
+                    <div class="progress-step-item"></div>
+                    <p>1%</p>
+                  </li>
+                  <li>
+                    <div class="progress-step-item">
+                    </div>
+                    <p>10%</p>
+                  </li>
+                  <li class="game-active">
+                    <div class="progress-step-item"></div>
+                    <p>40%</p>
+                  </li>
+                  <li>
+                    <div class="progress-step-item"></div>
+                    <p>60%</p>
+                  </li>
+                  <li>
+                    <div class="progress-step-item"></div>
+                    <p>80%</p>
+                  </li>
+                  <li>
+                    <div class="progress-step-item"></div>
+                    <p>100%</p>
+                  </li>
+                </ul>
+                <div class="progress-steps-connector game-3">
+                  <div class="progress-indicator"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Filter to the top local markets based upon your custom search, instantly</p>
+        </div>
+
+        <!-- Boundaries -->
+        <div class="boundaries">
+            <div class="boundaries-item-left">
+              <div class="dropdown">
+                <a onclick="boundaries()" class="innerBound">
+                 <img src="images/map.png" alt="" width="100%" height="100%">
+                </a>
+                <div id="boundaries" class="boundaries-content">
+                  
+                  <div class="flex-box">
+                    <div class="boundaries-text">
+                      <span>Selct Geographical <br> Boundaries</span>
+                    </div>
+                    <div class="boundaries-toggle">
+                      <div class="button-switch">
+                        <input type="checkbox" id="switch-blue" class="switch" checked />
+                        <label for="switch-blue" class="lbl-off">Automatic</label>
+                        <label for="switch-blue" class="lbl-on">Manual</label>
+                      </div>
+                    </div>
+                  </div>
+                 <hr>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

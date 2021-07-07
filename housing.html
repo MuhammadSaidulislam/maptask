@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ZipAnalysis</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="index.html">
+          <img src="images/Icon Only new Blue color.png" alt="">
+          <span>ZipAnalysis</span>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left searchBox" id="searchBox" role="search">
+          <div class="search">
+            <input type="text" class="searchTerm" placeholder="Address, Zip Code or City">
+            <button type="submit" class="searchButton">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right navBox">
+          <li class="form-group">
+            <div class="form-check paddOff">
+             <p>Select Time Period</p>
+              <input class="form-check-input" type="checkbox" value="" id="yearly">
+              <label class="form-check-label" for="yearly">
+                2021 Yearly Data
+              </label>
+            </div> 
+       
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <label class="form-check-label" style="color:#4C84C5;">
+                Growth Rate:
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="6month">
+              <label class="form-check-label check" for="6month">
+                6 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="12month">
+              <label class="form-check-label check" for="12month">
+                12 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="24month">
+              <label class="form-check-label check" for="24month">
+                24 Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" type="checkbox" value="" id="36month">
+              <label class="form-check-label check" for="36month">
+                36 Months
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  
+
+  <div id="wrapper" class="active">
+    <div id="sidebar-wrapper">
+      <!-- <ul id="sidebar_menu" class="sidebar-nav">
+        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"
+              class="glyphicon glyphicon-align-justify"></span></a></li>
+      </ul> -->
+      <!--  <ul class="sidebar-nav" id="sidebar">
+        <li><a>Link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+        <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+      </ul> -->
+
+
+      <ul>
+        <li class="inbox">
+          <a href="#">
+            <i class="fa fa-home">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Properties</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="index.html">
+            <i class="fa fa-map-marked">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Map</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="compare.html">
+            <i class="fa fa-line-chart">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Compare</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="#" onclick="filterHide()">
+            <i class="fa fa-filter">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Filter</p>
+          </a>
+        </li>
+        <li class="inbox">
+          <a href="#">
+            <i class="fa fa-file-alt">
+              <span class="icon-bg"></span>
+            </i>
+            <p>Report</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Page content -->
+    <div id="page-content-wrapper">
+      <!-- Keep all page content within the page-content inset div! -->
+      <div class="page-content inset comparePages">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                  <h1 class="text-left">Compare Features</h1>
+                  <p>Compare up to four zip codes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 marginSet">
+                    <div class="compareBtn">
+                        <a href="#">45645</a>
+                    </div>
+                </div>
+                <div class="col-md-3 marginSet">
+                    <div class="compareBtn">
+                        <a href="#">456456</a>
+                    </div>
+                </div>
+                <div class="col-md-3 marginSet">
+                    <div class="compareBtn">
+                        <a href="#">45645644</a>
+                    </div>
+                </div>
+                <div class="col-md-3 marginSet">
+                    <div class="compareBtn">
+                        <a href="#">456456</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-2 marginSet">
+                    <div class="compareFeatures" onclick="location.href='priceForecast.html'">
+                        <a href="#">Price Forecast</a>
+                    </div>
+                </div>
+                <div class="col-md-2 marginSet">
+                    <div class="compareFeatures" onclick="location.href='indicators.html'">
+                        <a href="#">Economic Indicators</a>
+                    </div>
+                </div>
+                <div class="col-md-2 marginSet">
+                    <div class="btnActive" onclick="location.href='housing.html'">
+                        <a href="#" class="btnActive">Housing</a>
+                    </div>
+                </div>
+                <div class="col-md-2 marginSet">
+                    <div class="compareFeatures" onclick="location.href='risk.html'">
+                        <a href="#">Risk Factors</a>
+                    </div>
+                </div>
+                <div class="col-md-2 marginSet">
+                    <div class="compareFeatures" onclick="location.href='community.html'">
+                        <a href="#">Community</a>
+                    </div>
+                </div>
+                <div class="col-md-2 marginSet">
+                    <div class="compareFeatures" onclick="location.href='enrollments.html'"> 
+                        <a href="#">Enrollments</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row chartSection">
+                <div class="col-md-4">
+                    <div class="chartInfo">
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="population">
+                            <label class="form-check-label check" for="population">
+                                Median Home Value
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="migration">
+                            <label class="form-check-label check" for="migration">
+                                Average Home Value
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="male">
+                            <label class="form-check-label check" for="male">
+                                Vacant Housing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="female">
+                            <label class="form-check-label check" for="female">
+                                Renter Occupied Housing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="maleavg">
+                            <label class="form-check-label check" for="maleavg">
+                                Owner Occupied Housing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="femaleavg">
+                            <label class="form-check-label check" for="femaleavg">
+                                Vacancy Rate
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="total1">
+                            <label class="form-check-label check" for="total1">
+                               Total 1-Bedroom Rentals
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="total2">
+                            <label class="form-check-label check" for="total2">
+                                Total 2-Bedroom Rentals
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="total3">
+                            <label class="form-check-label check" for="total3">
+                                Total 3-Bedroom Rentals
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input check" type="checkbox" value="" id="totalstudio">
+                            <label class="form-check-label check" for="totalstudio">
+                                Total Studio Rentals
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-8 lineChart">
+                    <canvas id="line-chart"></canvas>
+                    <p class="text-center">Estimate Population</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="featuresCard">
+                        <img src="https://static.wixstatic.com/media/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png/v1/fill/w_924,h_622,al_c/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png"
+                            alt="">
+                        <p class="viewProperty">View Property</p>
+                        <p class="address">265 Eagle Ct Alamo, CA 94507</p>
+                        <div class="wrapper center-block">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading active" role="tab" id="headingOne">
+                                        <h6 class="panel-title panelHeading">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#value" aria-expanded="true" aria-controls="value">
+                                                Value
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="value" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#property" aria-expanded="false"
+                                                aria-controls="property">
+                                                Property
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="property" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#region" aria-expanded="false"
+                                                aria-controls="region">
+                                                Region
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="region" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#hazards" aria-expanded="false"
+                                                aria-controls="hazards">
+                                                Hazards
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="hazards" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#market" aria-expanded="false"
+                                                aria-controls="market">
+                                                Market
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="market" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#investment"
+                                                aria-expanded="false" aria-controls="investment">
+                                                Investment
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="investment" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#community" aria-expanded="false"
+                                                aria-controls="community">
+                                                Community
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="community" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#school" aria-expanded="false"
+                                                aria-controls="school">
+                                                School
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="school" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">ZA Estimate</th>
+                                                        <th scope="col">$3.1M</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ZA Estimate $/ft<sup>2</sup></td>
+                                                        <td>$680/ft<sup>2</sup></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Larry the Bird</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="featuresCard">
+                        <img src="https://static.wixstatic.com/media/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png/v1/fill/w_924,h_622,al_c/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png"
+                            alt="">
+                        <p class="viewProperty">View Property</p>
+                        <p class="address">Walnut Creek, CA</p>
+                        <div class="wrapper center-block">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading active" role="tab" id="headingOne">
+                                        <h6 class="panel-title panelHeading">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#value2" aria-expanded="true" aria-controls="value2">
+                                                Value
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="value2" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#property2" aria-expanded="false"
+                                                aria-controls="property2">
+                                                Property
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="property2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#region2" aria-expanded="false"
+                                                aria-controls="region2">
+                                                Region
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="region2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#hazards2" aria-expanded="false"
+                                                aria-controls="hazards2">
+                                                Hazards
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="hazards2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#market2" aria-expanded="false"
+                                                aria-controls="market2">
+                                                Market
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="market2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#investment2"
+                                                aria-expanded="false" aria-controls="investment2">
+                                                Investment
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="investment2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#community2" aria-expanded="false"
+                                                aria-controls="community2">
+                                                Community
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="community2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#school2" aria-expanded="false"
+                                                aria-controls="school2">
+                                                School
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="school2" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="featuresCard">
+                        <img src="https://static.wixstatic.com/media/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png/v1/fill/w_924,h_622,al_c/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png"
+                            alt="">
+                        <p class="viewProperty">View Property</p>
+                        <p class="address">Alamo, CA</p>
+                        <div class="wrapper center-block">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading active" role="tab" id="headingOne">
+                                        <h6 class="panel-title panelHeading">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#value3" aria-expanded="true" aria-controls="value3">
+                                                Value
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="value3" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#property3" aria-expanded="false"
+                                                aria-controls="property3">
+                                                Property
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="property3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#region3" aria-expanded="false"
+                                                aria-controls="region3">
+                                                Region
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="region3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#hazards3" aria-expanded="false"
+                                                aria-controls="hazards3">
+                                                Hazards
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="hazards3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#market3" aria-expanded="false"
+                                                aria-controls="market3">
+                                                Market
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="market3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#investment3"
+                                                aria-expanded="false" aria-controls="investment3">
+                                                Investment
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="investment3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#community3" aria-expanded="false"
+                                                aria-controls="community3">
+                                                Community
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="community3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#school3" aria-expanded="false"
+                                                aria-controls="school3">
+                                                School
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="school3" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="featuresCard">
+                        <img src="https://static.wixstatic.com/media/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png/v1/fill/w_924,h_622,al_c/bb1bd6_aece458af3504a6ab4f036e7fc673e00~mv2.png"
+                            alt="">
+                        <p class="viewProperty">View Property</p>
+                        <p class="address">Danville, CA</p>
+                        <div class="wrapper center-block">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading active" role="tab" id="headingOne">
+                                        <h6 class="panel-title panelHeading">
+                                            <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                href="#value4" aria-expanded="true" aria-controls="value4">
+                                                Value
+                                            </a>
+                                        </h6>
+                                    </div>
+                                    <div id="value4" class="panel-collapse collapse in" role="tabpanel"
+                                        aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#property4" aria-expanded="false"
+                                                aria-controls="property4">
+                                                Property
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="property4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#region4" aria-expanded="false"
+                                                aria-controls="region4">
+                                                Region
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="region4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#hazards4" aria-expanded="false"
+                                                aria-controls="hazards4">
+                                                Hazards
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="hazards4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#market4" aria-expanded="false"
+                                                aria-controls="market4">
+                                                Market
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="market4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#investment4"
+                                                aria-expanded="false" aria-controls="investment4">
+                                                Investment
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="investment4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#community4" aria-expanded="false"
+                                                aria-controls="community4">
+                                                Community
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="community4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title panelHeading">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                                data-parent="#accordion" href="#school4" aria-expanded="false"
+                                                aria-controls="school4">
+                                                School
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="school4" class="panel-collapse collapse" role="tabpanel"
+                                        aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">$973M</th>
+                                                        <th scope="col"> <span class="text-danger">-68%</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>$550/ft<sup>2</sup></td>
+                                                        <td><p class="text-danger">-19%</p></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>115</td>
+                                                        <td><span class="text-primary">330%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$3.5K/mo</td>
+                                                        <td><span class="text-danger">-55%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>$2/ft<sup>2</sup></td>
+                                                        <td><span class="text-danger">-28%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4.09</td>
+                                                        <td><span class="text-danger">-31%</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3.21</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+
+      </div>
+    </div>
+
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
+
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.3/jquery.slimscroll.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+  <script src="chart.js"></script>
+
+</body>
+
+</html>  
