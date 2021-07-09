@@ -1,4 +1,5 @@
 
+
 body{
   background-color: #F1F5FB;
 }
@@ -42,7 +43,7 @@ text-decoration: none;
 .navbar {
   position:fixed;
   width: 100%;
-  height:54px;
+  height:55px;
   margin-bottom:0px;
   border:1px solid transparent;
   opacity: 1;
@@ -63,7 +64,7 @@ text-decoration: none;
     height: 100%;
     z-index: 10000;
     transition: all .4s ease 0s;
-    top: 54px;
+    top: 55px;
 }
 
 .sidebar-nav {
@@ -236,7 +237,7 @@ text-decoration: none;
   left: 0px;
   width: 85px;
   transition: all .4s ease 0s;
-  top: 66px;
+  top: 55px;
 }
 
 }
@@ -298,7 +299,7 @@ margin-top: 15px;
 }
 .mapLocation{
   width: 100%;
-  height: calc(100vh - 54px);
+  height: calc(100vh - 55px);
 }
 .mapLocation img{
   min-width: 100%;
@@ -933,7 +934,7 @@ margin: 5px auto;
 #mainnn {
   position: relative;
   transition: margin-left .5s;
- top: 54px;
+ top: 55px;
 }
 
 @media screen and (max-height: 450px) {
@@ -1134,7 +1135,7 @@ padding: 0px 0px;
   position: absolute;
   background-color: rgba(255,255,255,0.66);
   min-width: 160px;
-  bottom: 77px;
+  bottom: 85px;
   z-index: 1;
   left: -70px;
   width: 222px;
@@ -1406,7 +1407,13 @@ color: #fff;
 
 
   @media(max-width:1046px)  {
-
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+     border-color:#e7e7e7;
+     background-color: #fff;
+     height: auto;
+    }
+  
     .flex-item-left{
 
 

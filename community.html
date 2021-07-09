@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ZipAnalysis</title>
+  <title>ZipAnalyser</title>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -13,89 +13,90 @@
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand logo" href="index.html">
-          <img src="images/Icon Only new Blue color.png" alt="">
-          <span>ZipAnalysis</span>
-        </a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left searchBox" id="searchBox" role="search">
-          <div class="search">
-            <input type="text" class="searchTerm" placeholder="Address, Zip Code or City">
-            <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
+ 
+    <nav class="navbar navbar-default">
+        <div class="container-fluid marginOff">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand logo" href="index.html">
+              <img src="images/Icon Only new Blue color.png" alt="">
+              <p>ZipAnalyser</p>
+            </a>
           </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right navBox">
-          <li class="form-group">
-            <div class="form-check paddOff">
-             <p>Select Time Period</p>
-              <input class="form-check-input" type="checkbox" value="" id="yearly">
-              <label class="form-check-label" for="yearly">
-                2021 Yearly Data
-              </label>
-            </div> 
-       
-          </li>
-          <li class="form-group NavmarginSet">
-            <div class="form-check">
-              <label class="form-check-label" style="color:#4C84C5;">
-                Growth Rate:
-              </label>
-            </div>
-          </li>
-          <li class="form-group NavmarginSet">
-            <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="6month">
-              <label class="form-check-label check" for="6month">
-                6 Months
-              </label>
-            </div>
-          </li>
-          <li class="form-group NavmarginSet">
-            <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="12month">
-              <label class="form-check-label check" for="12month">
-                12 Months
-              </label>
-            </div>
-          </li>
-          <li class="form-group NavmarginSet">
-            <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="24month">
-              <label class="form-check-label check" for="24month">
-                24 Months
-              </label>
-            </div>
-          </li>
-          <li class="form-group NavmarginSet">
-            <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="36month">
-              <label class="form-check-label check" for="36month">
-                36 Months
-              </label>
-            </div>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  
+    
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left searchBox" id="searchBox" role="search">
+              <div class="search">
+                <input type="text" class="searchTerm" placeholder="Address, Zip Code or City">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right navBox">
+              <li class="form-group">
+                <div class="form-check paddOff">
+                  <p>Select Time Period</p>
+                  <input class="form-check-input" type="checkbox" value="" id="yearly">
+                  <label class="form-check-label" for="yearly">
+                    2021 Yearly Data
+                  </label>
+                </div>
+    
+              </li>
+              <li class="form-group NavmarginSet">
+                <div class="form-check">
+                  <label class="form-check-label" style="color:#4C84C5;">
+                    <span id="growthcc">Growth Last:</span>
+                    <span id="forecastcc">ForeCast Last:</span>
+                  </label>
+                </div>
+              </li>
+              <li class="form-group NavmarginSet">
+                <div class="form-check">
+                  <input class="form-check-input check" type="checkbox" value="" id="6month">
+                  <label class="form-check-label check" for="6month">
+                    6 Months
+                  </label>
+                </div>
+              </li>
+              <li class="form-group NavmarginSet">
+                <div class="form-check">
+                  <input class="form-check-input check" type="checkbox" value="" id="12month">
+                  <label class="form-check-label check" for="12month">
+                    12 Months
+                  </label>
+                </div>
+              </li>
+              <li class="form-group NavmarginSet">
+                <div class="form-check">
+                  <input class="form-check-input check" type="checkbox" value="" id="24month">
+                  <label class="form-check-label check" for="24month">
+                    24 Months
+                  </label>
+                </div>
+              </li>
+              <li class="form-group NavmarginSet">
+                <div class="form-check">
+                  <input class="form-check-input check" type="checkbox" value="" id="36month">
+                  <label class="form-check-label check" for="36month">
+                    36 Months
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+
 
   <div id="wrapper" class="active">
     <div id="sidebar-wrapper">
