@@ -3,21 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>ZipAnalysis</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <title>ZipAnalyser</title>
+  <link rel="stylesheet" href="bootstrap.css">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
-
-  <!-- <link rel="stylesheet" href="responsive.css"> -->
 
 </head>
 
 <body>
   <!-- partial:index.partial.html -->
   <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container-fluid marginOff">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -29,7 +27,7 @@
         </button>
         <a class="navbar-brand logo" href="index.html">
           <img src="images/Icon Only new Blue color.png" alt="">
-          <span>ZipAnalysis</span>
+          <p>ZipAnalyser</p>
         </a>
       </div>
 
@@ -57,10 +55,8 @@
           <li class="form-group NavmarginSet">
             <div class="form-check">
               <label class="form-check-label" style="color:#4C84C5;">
-           
                 <span id="growthcc">Growth Last:</span>
                 <span id="forecastcc">ForeCast Last:</span>
-               
               </label>
             </div>
           </li>
@@ -128,13 +124,53 @@
             <p>Compare</p>
           </a>
         </li>
-        <li class="inbox">
-          <a onclick="show_hide()">
+        <li class="inbox filterPos dropdown">
+          <a onclick="filterShow()">
             <i class="fa fa-filter">
               <span class="icon-bg"></span>
             </i>
             <p>Filter</p>
           </a>
+           <!-- filter -->
+          <div class="filterdetail dropdown-content" id="filterdetail">
+            <div style="max-width: 500px; display: block; margin: auto;">
+              <div class="game-progress-bar-container game-count-5">
+                <div class="progress-steps-section">
+                  <ul class="progress-steps">
+                    <li>
+                      <div class="progress-step-item"></div>
+                      <p>1%</p>
+                    </li>
+                    <li>
+                      <div class="progress-step-item">
+                      </div>
+                      <p>10%</p>
+                    </li>
+                    <li class="game-active">
+                      <div class="progress-step-item"></div>
+                      <p>40%</p>
+                    </li>
+                    <li>
+                      <div class="progress-step-item"></div>
+                      <p>60%</p>
+                    </li>
+                    <li>
+                      <div class="progress-step-item"></div>
+                      <p>80%</p>
+                    </li>
+                    <li>
+                      <div class="progress-step-item"></div>
+                      <p>100%</p>
+                    </li>
+                  </ul>
+                  <div class="progress-steps-connector game-3">
+                    <div class="progress-indicator"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>Filter to the top local markets based upon your custom search, instantly</p>
+          </div>
         </li>
         <li class="inbox">
           <a href="#" onclick="openNav()">
@@ -170,7 +206,7 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14617.387009585536!2d90.45594321852968!3d23.663554557698774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0b477b7d59f%3A0xef2e174b3531b720!2sPagla%2C%20Fatullah!5e0!3m2!1sen!2sbd!4v1625457616665!5m2!1sen!2sbd"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
              -->
-              <img src="images/map.png" width="100%" height="100%" alt="">
+              <img src="images/map.png" alt="">
 
             </div>
 
@@ -219,9 +255,9 @@
 
         <!-- report section  end -->
         <div id="positionSet">
-          <div class="row">
-            <div class="col-md-6 centerFooter">
+            <div class="centerFooter">
               <div class="flex-container">
+                <!-- Forecast -->
                 <div class="flex-item-left">
                   <a class="dropbtn risk" onclick="growth_hide()">
                     <i class="fa fa-file"></i>
@@ -229,7 +265,6 @@
                     <p id="growthShow">Growth</p>
                   </a>
                 </div>
-
                 <!-- Indicators -->
                 <div class="flex-item-left">
                   <div class="dropdown">
@@ -238,52 +273,60 @@
                       <p>Indicators</p>
                     </a>
                     <div id="indicators" class="dropdown-content">
-                      <div class="form-check getIndicators">
+                      <div class="form-check getIndicators qusSet">
                         <input class="form-check-input check" type="checkbox" value="Median Income" id="Indomedian">
                         <label class="form-check-label check" for="Indomedian">
-                          Median Income
-                        </label>
+                          Median Income  
+                        </label> 
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                    
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgIncome">
                           average Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
                         <label class="form-check-label" for="medianNet">
                           Median Net Worth
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgNet">
                           Average Net Worth
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getIndicators">
+                      <div class="form-check getIndicators qusSet">
                         <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
                           id="IndomedianDis">
                         <label class="form-check-label check" for="IndomedianDis">
                           Median Disposable Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgDis"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgDis">
                           Average Disposable Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getIndicators">
+                      <div class="form-check getIndicators qusSet">
                         <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
                           id="Indounemployment">
                         <label class="form-check-label check" for="Indounemployment">
                           Unemployment Rate
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                     </div>
                   </div>
@@ -297,52 +340,60 @@
                       <p>Housing</p>
                     </a>
                     <div id="housing" class="dropdown-content">
-                      <div class="form-check getHousing">
+                      <div class="housingBox"></div>
+                      <div class="form-check getHousing qusSet">
                         <input class="form-check-input check" type="checkbox" value="Median Income" id="housingmedian">
                         <label class="form-check-label check" for="housingmedian">
                           Median Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgIncome">
                           average Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
                         <label class="form-check-label" for="medianNet">
                           Median Net Worth
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgNet">
                           Average Net Worth
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getHousing">
+                      <div class="form-check getHousing qusSet">
                         <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
                           id="housingmedianDis">
                         <label class="form-check-label check" for="housingmedianDis">
                           Median Disposable Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue">
+                      <div class="form-check getValue qusSet">
                         <input class="form-check-input check" type="checkbox" value="" id="avgDis"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgDis">
                           Average Disposable Income
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getHousing">
+                      <div class="form-check getHousing qusSet">
                         <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
                           id="housingunemployment">
                         <label class="form-check-label check" for="housingunemployment">
                           Unemployment Rate
                         </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                     </div>
                   </div>
@@ -409,7 +460,6 @@
 
                 <!-- Community -->
                 <div class="flex-item-left">
-                  <div class="dropdown">
                     <div class="dropdown">
                       <a onclick="footerShow('community')" class="dropbtn community">
                         <i class="fa fa-users"></i>
@@ -467,15 +517,10 @@
                         </div>
                       </div>
                     </div>
-
-
-                  </div>
                 </div>
 
                 <!-- Enrollments -->
                 <div class="flex-item-left">
-
-                  <div class="dropdown">
                     <div class="dropdown">
                       <a onclick="footerShow('enroll')" class="dropbtn enroll">
                         <i class="fa fa-user-plus"></i>
@@ -531,12 +576,10 @@
                           </label>
                         </div>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
         <!-- report show start -->
@@ -572,55 +615,24 @@
         </div>
         <!-- report show end -->
 
-        <!-- filter -->
-        <div class="filterdetail" id="filterdetail">
-          <div style="max-width: 500px; display: block; margin: auto;">
-            <div class="game-progress-bar-container game-count-5">
-              <div class="progress-steps-section">
-                <ul class="progress-steps">
-                  <li>
-                    <div class="progress-step-item"></div>
-                    <p>1%</p>
-                  </li>
-                  <li>
-                    <div class="progress-step-item">
-                    </div>
-                    <p>10%</p>
-                  </li>
-                  <li class="game-active">
-                    <div class="progress-step-item"></div>
-                    <p>40%</p>
-                  </li>
-                  <li>
-                    <div class="progress-step-item"></div>
-                    <p>60%</p>
-                  </li>
-                  <li>
-                    <div class="progress-step-item"></div>
-                    <p>80%</p>
-                  </li>
-                  <li>
-                    <div class="progress-step-item"></div>
-                    <p>100%</p>
-                  </li>
-                </ul>
-                <div class="progress-steps-connector game-3">
-                  <div class="progress-indicator"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p>Filter to the top local markets based upon your custom search, instantly</p>
-        </div>
 
         <!-- Boundaries -->
         <div class="boundaries">
           <div class="boundaries-item-left">
             <div class="dropdown">
               <a onclick="boundaries()" class="innerBound">
-                <img src="images/map.png" alt="" width="100%" height="100%">
+                <!-- <img src="" alt="" width="100%" height="100%"> -->
               <!-- <span class="imgfooter">Boundaries</span> -->
+              <div class="boundaries-container">
+                <img src="images/map.png" alt="Snow" style="width:100%;">
+                <div class="bottom-left">
+                  <span>Boundaries</span>
+                </div>
+              </div>
               </a>
+
+
+
               <div id="boundaries" class="boundaries-content">
 
                 <div class="flex-box">
@@ -628,10 +640,9 @@
                     <span>Selct Geographical <br> Boundaries</span>
                   </div>
                   <div class="boundaries-toggle">
-                    <div class="button-switch">
-                      <input type="checkbox" id="switch-blue" class="switch" checked />
-                      <label for="switch-blue" class="lbl-off">Automatic</label>
-                      <label for="switch-blue" class="lbl-on">Manual</label>
+                    <div class="on-off-toggle">
+                      <input class="on-off-toggle__input" type="checkbox" id="bopis" />
+                      <label for="bopis" class="on-off-toggle__slider"></label>
                     </div>
                   </div>
                 </div>

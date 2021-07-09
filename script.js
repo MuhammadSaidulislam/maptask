@@ -1,7 +1,4 @@
-// $("#menu-toggle").click(function(e) {
-//         e.preventDefault();
-//         $("#wrapper").toggleClass("active");
-// });
+
 
 function grwothInfo() {
   document.getElementById("growthBox").style.display = "block";
@@ -13,78 +10,40 @@ function growthHide() {
 }
 
 
-// var modal = document.getElementById("myModal");
 
-// var btn = document.getElementById("myBtn");
+// Filter box
 
-// var span = document.getElementsByClassName("close")[0];
-
-// btn.onclick = function () {
-//   modal.style.display = "block";
-// }
-
-// span.onclick = function () {
-//   modal.style.display = "none";
-// }
-
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
+// var a = 1;
+// function show_hide() {
+//   console.log(a);
+//   if (a == 1) {
+//     document.getElementById("filterdetail").style.display = "block";
+//     return a = 0;
+//   }
+//   else {
+//     document.getElementById("filterdetail").style.display = "none";
+//     return a = 1;
 //   }
 // }
 
 
-
-// function filterHide() {
-//   var x = document.getElementById("filterdetail");
-//   if (x.style.display === "none") {
-//     x.style.display = "block";
-//   } else {
-//     x.style.display = "none";
-//   }
-// }
-
-// function filterHide() {
-//   document.getElementById("filterdetail").style.display= "block";
-// }
-
-// $('#filter').click(function()
-// {   
-//     $("#filterdetail").toggle();     
-// });
-
-
-var a = 1;
-function show_hide() {
-  console.log(a);
-  if (a == 1) {
-    document.getElementById("filterdetail").style.display = "block";
-    return a = 0;
-  }
-  else {
-    document.getElementById("filterdetail").style.display = "none";
-    return a = 1;
-  }
-}
-
-
-
+// Forecast and growth rate Show/Hide
 var b = 1;
 function growth_hide() {
-  console.log(a);
-  if (a == 1) {
+  
+  if (b == 1) {
     document.getElementById("growthShow").style.display = "block";
     document.getElementById("ForecastHide").style.display = "none";
     document.getElementById("growthcc").style.display = "none";
     document.getElementById("forecastcc").style.display = "block";
-    return a = 0;
+    return b = 0;
   }
   else {
     document.getElementById("growthShow").style.display = "none";
     document.getElementById("ForecastHide").style.display = "block";
     document.getElementById("growthcc").style.display = "block";
     document.getElementById("forecastcc").style.display = "none";
-    return a = 1;
+    return b = 1;
   }
 }
 
@@ -187,10 +146,10 @@ $(document).ready(function () {
   });
 });
 
-// report
+// Sidebar report
 function openNav() {
   document.getElementById("mySidenav").style.width = "400px";
-  document.getElementById("positionSet").style.marginLeft = "30%";
+ // document.getElementById("positionSet").style.marginLeft = "30%";
   document.getElementById("mainnn").style.marginLeft = "373px";
   document.getElementById("openArrow").style.display = "none";
   document.getElementById("closeArrow").style.display = "block";
@@ -198,7 +157,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("positionSet").style.marginLeft = "50%";
+ // document.getElementById("positionSet").style.marginLeft = "50%";
   document.getElementById("mainnn").style.marginLeft = "0";
   document.body.style.backgroundColor = "white";
   document.getElementById("openArrow").style.display = "block";
@@ -209,7 +168,7 @@ function closeNav() {
 
 
 
-
+// Side LIne chart
 
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
@@ -287,7 +246,7 @@ var myChart = new Chart(ctx1, {
   }
 });
 
-
+// Bottom Navbar opup
 function footerShow(id) {
   let allid = ['indicators', 'housing','community','enroll','risk']
   document.getElementById(id).classList.toggle("show");
@@ -299,43 +258,18 @@ function footerShow(id) {
   }
 }
 
-// function indicators() {
-//   document.getElementById("indicators").classList.toggle("showw");
-// }
-// function housing() {
-//   document.getElementById("housing").classList.toggle("show");
-// }
-// function community() {
-//   document.getElementById("community").classList.toggle("show");
-// }
-// function enroll() {
-//   document.getElementById("enroll").classList.toggle("show");
-// }
-// function risk() {
-//   document.getElementById("risk").classList.toggle("show");
-// }
 
-
+// boundaries function
 function boundaries() {
   document.getElementById("boundaries").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// }
+// Filter 
+function filterShow() {
+  document.getElementById("filterdetail").classList.toggle("show");
+}
 
-
-
+// checkbox uncheck after refresh
 $(document).ready(function () {
   $(':checkbox:checked').prop('checked', false);
 });
