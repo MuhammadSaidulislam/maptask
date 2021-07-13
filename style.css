@@ -253,6 +253,9 @@ text-decoration: none;
    .form-check{
   margin: 5px auto;
   }
+  .paddOff{
+    padding-right: 7px;
+  }
 .paddOff p{
   margin: 0 0 0px;
 }
@@ -333,7 +336,7 @@ margin-top: 15px;
 }
 .centerFooter a p{
   margin-top: 1px;
-  color: #222;
+  color: #fff;
   font-size: 11px;
   font-weight: 600;
 }
@@ -365,6 +368,9 @@ margin-top: 15px;
 
 
 /* grow rate box */
+.growthNav .form-check{
+  margin: -5px 0px 0px 0px;
+}
 .growthPoint{
   position: absolute;
   top: 5px;
@@ -894,13 +900,13 @@ margin: 5px auto;
   width: 0;
   position: fixed;
   z-index: 1;
-  top: 70px;
-  left: 58px;
+  top: 54px;
+  right: -14px;
   background-color: #fff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 15px;
-  padding-left: 21px;
+  padding-left: 2px;
   padding-right: 5px;
   padding-bottom: 100px;
 }
@@ -920,7 +926,7 @@ margin: 5px auto;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #222;
 }
 
 .sidenav .closebtn {
@@ -962,11 +968,11 @@ margin-bottom: 5px;
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: rgba(255, 255, 255, 0.7); */
   padding: 11px 6px 1px 1px;
-  border-radius: 7px;
+  /* border-radius: 7px; */
   text-align: center;
-  border: 1px solid #222;
+  /* border: 1px solid #222; */
 }
 
 .flex-item-left {
@@ -977,6 +983,9 @@ margin-bottom: 5px;
   margin-left: 5px;
   /* border-radius: 10px; */
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 7px;
+  padding: 13px 0px 0px 0px;;
   
 }
 
@@ -1124,39 +1133,99 @@ padding: 0px 0px;
 .flex-item-left .dropdown {
   position: relative;
   display: block;
-  border-left: 1px solid #000;
+  /* border-left: 1px solid #000; */
 }
 .flex-item-left .dropdown a i{
  font-size: 35px;
+ font-weight: 800;
+ text-shadow: 2px 4px 6px #222;
 }
 
 .dropdown-content {
    display: none;
   position: absolute;
-  background-color: rgba(255,255,255,0.66);
-  min-width: 160px;
+  background-color: rgba(0, 0, 0, 0.705);
   bottom: 85px;
   z-index: 1;
-  left: -70px;
-  width: 222px;
   text-align: left;
   padding: 0px 7px;
   border-radius: 8px;
-  /* height: 200px;
-  overflow-y: auto; */
+
 }
-.dropdown-content:before {
+.forecastHeight{
+  height: auto;
+  width: 172px;
+  left: -46px;
+}
+.indicatorHeight{
+  height: auto;
+  width: 224px;
+  left: -76px;
+}
+.housingHeight{
+  /* height: auto; */
+  width: 224px;
+  left: -75px;
+  height: 200px;
+  overflow-y: auto;
+}
+.bottomBox{
+  width: 20px;
+  height: 20px;
+  /* background-color: #951414; */
+  position: fixed;
+  bottom: 126px;
+  margin-left: 107px;
+  border-top: 17px solid #000000b4;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+transform: translate(-50%,0);
+}
+.commbottomBox{
+  width: 20px;
+  height: 20px;
+  /* background-color: #951414; */
+  position: fixed;
+  bottom: 126px;
+  margin-left: 160px;
+  border-top: 17px solid #000000b4;
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+transform: translate(-50%,0);
+}
+.riskHeight{
+  height: auto;
+  width: 224px;
+  left: -75px;
+}
+.enrollHeight{
+  height: auto;
+  width: 279px;
+  left: -103px;
+}
+.communityHeight{
+  /* height: auto; */
+  width: 331px;
+  /* overflow-y: auto;  */
+  left: -128px;
+  height: 200px;
+  overflow-y: auto;
+}
+.borderOff .dropdown{
+  border-left: none;
+}
+ .dropdown-content:before {
   content: '';
 position: absolute;
 width: 0;
 height: 0;
-border-top: 17px solid #f1f1f1c4;
+border-top: 17px solid #000000b4;
 border-left: 10px solid transparent;
 border-right: 10px solid transparent;
 bottom: -17px;
 left: 50%;
 transform: translate(-50%,0);
-} 
+}  
 /* .indiBox{
   content: '';
   position: fixed;
@@ -1198,7 +1267,7 @@ transform: translate(-50%,0);
 letter-spacing: 0px;
 line-height: 5px;
 font-weight: 600;
-color: #000;
+color: #fff;
 margin: 5px 8px;
 }
 
@@ -1535,7 +1604,7 @@ height: 100px;
 
 .dropdown .dropdown-content .qusSet a i{
   font-size: 14px;
-  color: #951414;
+  color: #fff;
 }
 @media screen and (min-width: 1046px) {
   

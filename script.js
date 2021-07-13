@@ -27,25 +27,7 @@ function growthHide() {
 // }
 
 
-// Forecast and growth rate Show/Hide
-var b = 1;
-function growth_hide() {
-  
-  if (b == 1) {
-    document.getElementById("growthShow").style.display = "block";
-    document.getElementById("ForecastHide").style.display = "none";
-    document.getElementById("growthcc").style.display = "none";
-    document.getElementById("forecastcc").style.display = "block";
-    return b = 0;
-  }
-  else {
-    document.getElementById("growthShow").style.display = "none";
-    document.getElementById("ForecastHide").style.display = "block";
-    document.getElementById("growthcc").style.display = "block";
-    document.getElementById("forecastcc").style.display = "none";
-    return b = 1;
-  }
-}
+
 
 
 // growth value show
@@ -148,9 +130,10 @@ $(document).ready(function () {
 
 // Sidebar report
 function openNav() {
-  document.getElementById("mySidenav").style.width = "400px";
+ // document.getElementById("mainnn").style.marginRight = "373px";
+  document.getElementById("mySidenav").style.width = "387px";
  // document.getElementById("positionSet").style.marginLeft = "30%";
-  document.getElementById("mainnn").style.marginLeft = "373px";
+  
   document.getElementById("openArrow").style.display = "none";
   document.getElementById("closeArrow").style.display = "block";
 }
@@ -158,11 +141,10 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
  // document.getElementById("positionSet").style.marginLeft = "50%";
-  document.getElementById("mainnn").style.marginLeft = "0";
+  document.getElementById("mainnn").style.marginRight = "0";
   document.body.style.backgroundColor = "white";
   document.getElementById("openArrow").style.display = "block";
   document.getElementById("closeArrow").style.display = "none";
-
 }
 
 
@@ -248,7 +230,7 @@ var myChart = new Chart(ctx1, {
 
 // Bottom Navbar opup
 function footerShow(id) {
-  let allid = ['indicators', 'housing','community','enroll','risk']
+  let allid = ['forecast','indicators', 'housing','community','enroll','risk']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -273,3 +255,7 @@ function filterShow() {
 $(document).ready(function () {
   $(':checkbox:checked').prop('checked', false);
 });
+
+
+var radios = document.querySelectorAll('input[type="radio"]:checked');
+var value = radios.length>0? radios[0].value: null;

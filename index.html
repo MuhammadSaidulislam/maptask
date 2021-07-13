@@ -10,6 +10,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
 
+  <link rel="stylesheet" href="./responsive.css">
+
 </head>
 
 <body>
@@ -45,24 +47,23 @@
           <li class="form-group">
             <div class="form-check paddOff">
               <p>Select Time Period</p>
-              <input class="form-check-input" type="checkbox" value="" id="yearly">
+              <input class="form-check-input" type="radio" value="" id="yearly" name="navbar">
               <label class="form-check-label" for="yearly">
                 2021 Yearly Data
               </label>
             </div>
-
           </li>
-          <li class="form-group NavmarginSet">
+          <li class="form-group NavmarginSet growthNav">
             <div class="form-check">
-              <label class="form-check-label" style="color:#4C84C5;">
+              <label class="form-check-label" style="color:#000000;">
+                <p>OR</p>
                 <span id="growthcc">Growth Last:</span>
-                <span id="forecastcc">Forecast Last:</span>
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="6month">
+              <input class="form-check-input check" type="radio" value="" id="6month" name="navbar">
               <label class="form-check-label check" for="6month">
                 6 Months
               </label>
@@ -70,7 +71,7 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="12month">
+              <input class="form-check-input check" type="radio" value="" id="12month" name="navbar">
               <label class="form-check-label check" for="12month">
                 12 Months
               </label>
@@ -78,16 +79,16 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="24month">
-              <label class="form-check-label check" for="24month">
+              <input class="form-check-input" type="radio" value="" id="24month" name="navbar">
+              <label class="form-check-label" for="24month">
                 24 Months
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="36month">
-              <label class="form-check-label check" for="36month">
+              <input class="form-check-input" type="radio" value="" id="36month" name="navbar">
+              <label class="form-check-label" for="36month">
                 36 Months
               </label>
             </div>
@@ -217,6 +218,9 @@
 
         <!-- report section start -->
         <div id="mySidenav" class="sidenav">
+          <a style="font-size:15px;cursor:pointer; float: right;" href="javascript:void(0)" id="closeArrow"
+              onclick="closeNav()">
+              <i class="fa fa-times-circle"></i></a>
           <h5>Growth rate: Last 6 months</h5>
           <div class="viewReport">
             <p>San Jose, CA, United States</p>
@@ -258,12 +262,37 @@
             <div class="centerFooter">
               <div class="flex-container">
                 <!-- Forecast -->
-                <div class="flex-item-left">
-                  <a class="dropbtn risk" onclick="growth_hide()">
-                    <i class="fa fa-file"></i>
-                    <p id="ForecastHide">ForeCast</p>
-                    <p id="growthShow">Growth</p>
-                  </a>
+                <div class="flex-item-left borderOff">
+                  <div class="dropdown">
+                    <a  onclick="footerShow('forecast')" class="dropbtn forecast">
+                      <i class="fa fa-file"></i>
+                      <p id="ForecastHide">Forecast</p>
+                    </a>
+                    <div id="forecast" class="dropdown-content forecastHeight">
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" type="checkbox" value="12-Month Forecast" id="12months">
+                        <label class="form-check-label check" for="12months">
+                          12-Month Forecast 
+                        </label> 
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" type="checkbox" value="24-Month Forecast" id="24months">
+                        <label class="form-check-label check" for="24months">
+                          24-Month Forecast 
+                        </label> 
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" type="checkbox" value="36-Month Forecast " id="36months">
+                        <label class="form-check-label check" for="36months">
+                          36-Month Forecast 
+                        </label> 
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                    
+                    </div>
+                  </div>
                 </div>
                 <!-- Indicators -->
                 <div class="flex-item-left">
@@ -272,7 +301,7 @@
                       <i class="fa fa-tachometer-alt"></i>
                       <p>Indicators</p>
                     </a>
-                    <div id="indicators" class="dropdown-content">
+                    <div id="indicators" class="dropdown-content indicatorHeight">
                       <div class="form-check getIndicators qusSet">
                         <input class="form-check-input check" type="checkbox" value="Median Income" id="Indomedian">
                         <label class="form-check-label check" for="Indomedian">
@@ -334,17 +363,20 @@
 
                 <!-- Housing -->
                 <div class="flex-item-left">
+                  
                   <div class="dropdown">
                     <a onclick="footerShow('housing')" class="dropbtn housing">
                       <i class="fa fa-house-user"></i>
                       <p>Housing</p>
                     </a>
-                    <div id="housing" class="dropdown-content">
+                    
+                    <div id="housing" class="dropdown-content housingHeight">
+                      <div class="bottomBox"></div>
                       <div class="housingBox"></div>
                       <div class="form-check getHousing qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Median Income" id="housingmedian">
+                        <input class="form-check-input check" type="checkbox" value="Median Home Value" id="housingmedian">
                         <label class="form-check-label check" for="housingmedian">
-                          Median Income
+                          Median Home Value
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -352,14 +384,14 @@
                         <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgIncome">
-                          Average Income
+                          Average Home Value
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                       <div class="form-check getValue qusSet">
                         <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
                         <label class="form-check-label" for="medianNet">
-                          Median Net Worth
+                          Affordability Index
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -367,15 +399,15 @@
                         <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgNet">
-                          Average Net Worth
+                          Renter Occupied Housing
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                       <div class="form-check getHousing qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                        <input class="form-check-input check" type="checkbox" value="Owner Occupied Housing"
                           id="housingmedianDis">
                         <label class="form-check-label check" for="housingmedianDis">
-                          Median Disposable Income
+                          Owner Occupied Housing
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -383,15 +415,55 @@
                         <input class="form-check-input check" type="checkbox" value="" id="avgDis"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgDis">
-                          Average Disposable Income
+                          Vacant Housing
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                       <div class="form-check getHousing qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                        <input class="form-check-input check" type="checkbox" value="Vacancy Rate"
                           id="housingunemployment">
                         <label class="form-check-label check" for="housingunemployment">
-                          Unemployment Rate
+                          Vacancy Rate
+                        </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getValue qusSet">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Total 1-Bedroom Rentals
+                        </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getValue qusSet">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Total 2-Bedroom Rentals
+                        </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getValue qusSet">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Total 3-Bedroom Rentals
+                        </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getValue qusSet">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Total Studio Rentals
+                        </label>
+                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getValue qusSet">
+                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                          onclick="return false;">
+                        <label class="form-check-label check" for="avgDis">
+                          Group Quarters
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -406,11 +478,11 @@
                       <i class="fa fa-exclamation-triangle"></i>
                       <p>Risk</p>
                     </a>
-                    <div id="risk" class="dropdown-content">
+                    <div id="risk" class="dropdown-content riskHeight">
                       <div class="form-check getRisk qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Median Income" id="riskmedian">
+                        <input class="form-check-input check" type="checkbox" value="Total In Poverty" id="riskmedian">
                         <label class="form-check-label check" for="riskmedian">
-                          Median Income
+                          Total In Poverty
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -418,14 +490,15 @@
                         <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgIncome">
-                          Average Income
+                          Crime Index
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue qusSet">
-                        <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
-                        <label class="form-check-label" for="medianNet">
-                          Median Net Worth
+                      <div class="form-check getRisk qusSet">
+                        <input class="form-check-input check" type="checkbox" value="Number of Businesses"
+                          id="riskunemployment">
+                        <label class="form-check-label check" for="riskunemployment">
+                          Number of Businesses
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
@@ -433,34 +506,20 @@
                         <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                           onclick="return false;">
                         <label class="form-check-label check" for="avgNet">
-                          Average Net Worth
+                          Number of Jobs
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
                       <div class="form-check getRisk qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                        <input class="form-check-input check" type="checkbox" value="GDP"
                           id="riskmedianDis">
                         <label class="form-check-label check" for="riskmedianDis">
-                          Median Disposable Income
+                          GDP
                         </label>
                         <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                       </div>
-                      <div class="form-check getValue qusSet">
-                        <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                          onclick="return false;">
-                        <label class="form-check-label check" for="avgDis">
-                          Average Disposable Income
-                        </label>
-                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
-                      </div>
-                      <div class="form-check getRisk qusSet">
-                        <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
-                          id="riskunemployment">
-                        <label class="form-check-label check" for="riskunemployment">
-                          Unemployment Rate
-                        </label>
-                        <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
-                      </div>
+                     
+                      
                     </div>
                   </div>
                 </div>
@@ -472,12 +531,13 @@
                         <i class="fa fa-users"></i>
                         <p>Community</p>
                       </a>
-                      <div id="community" class="dropdown-content">
+                      <div id="community" class="dropdown-content communityHeight">
+                        <div class="commbottomBox"></div>
                         <div class="form-check getCommunity qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Median Income"
+                          <input class="form-check-input check" type="checkbox" value="Population"
                             id="communitymedian">
                           <label class="form-check-label check" for="communitymedian">
-                            Median Income
+                            Population
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -485,7 +545,7 @@
                           <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                             onclick="return false;">
                           <label class="form-check-label check" for="avgIncome">
-                            Average Income
+                            Migration
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -493,7 +553,7 @@
                           <input class="form-check-input" type="checkbox" value="" id="medianNet"
                             onclick="return false;">
                           <label class="form-check-label" for="medianNet">
-                            Median Net Worth
+                            Male Population
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -501,15 +561,15 @@
                           <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                             onclick="return false;">
                           <label class="form-check-label check" for="avgNet">
-                            Average Net Worth
+                            Female Population
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
                         <div class="form-check getCommunity qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                          <input class="form-check-input check" type="checkbox" value="Median Age Male"
                             id="communitymedianDis">
                           <label class="form-check-label check" for="communitymedianDis">
-                            Median Disposable Income
+                            Median Age Male
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -517,15 +577,71 @@
                           <input class="form-check-input check" type="checkbox" value="" id="avgDis"
                             onclick="return false;">
                           <label class="form-check-label check" for="avgDis">
-                            Average Disposable Income
+                            Median Age Female
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
                         <div class="form-check getCommunity qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                          <input class="form-check-input check" type="checkbox" value="Population in Households"
                             id="communityunemployment">
                           <label class="form-check-label check" for="communityunemployment">
-                            Unemployment Rate
+                            Population in Households
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Persons per Households
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Total Households
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            One Person Households
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Married Couple Households
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Married Couple Households with children
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Married Couple Households without children
+                          </label>
+                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
+                        </div>
+                        <div class="form-check getValue qusSet">
+                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
+                            onclick="return false;">
+                          <label class="form-check-label check" for="avgDis">
+                            Vehicles Per Household
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -540,11 +656,11 @@
                         <i class="fa fa-user-plus"></i>
                         <p>Enrollments</p>
                       </a>
-                      <div id="enroll" class="dropdown-content">
+                      <div id="enroll" class="dropdown-content enrollHeight">
                         <div class="form-check getEnroll qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Median Income" id="enrollmedian">
+                          <input class="form-check-input check" type="checkbox" value="Total Educated" id="enrollmedian">
                           <label class="form-check-label check" for="enrollmedian">
-                            Median Income
+                            Total Educated
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -552,7 +668,7 @@
                           <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
                             onclick="return false;">
                           <label class="form-check-label check" for="avgIncome">
-                            Average Income
+                            Enrollments Nursery/Preschool
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -560,7 +676,7 @@
                           <input class="form-check-input" type="checkbox" value="" id="medianNet"
                             onclick="return false;">
                           <label class="form-check-label" for="medianNet">
-                            Median Net Worth
+                            Enrollments Kindergarten/Elementary
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
@@ -568,31 +684,23 @@
                           <input class="form-check-input check" type="checkbox" value="" id="avgNet"
                             onclick="return false;">
                           <label class="form-check-label check" for="avgNet">
-                            Average Net Worth
+                            Enrollments High School
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
                         <div class="form-check getEnroll qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
+                          <input class="form-check-input check" type="checkbox" value="Enrollments College/Graduate/Prof"
                             id="enrollmedianDis">
                           <label class="form-check-label check" for="enrollmedianDis">
-                            Median Disposable Income
-                          </label>
-                          <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
-                        </div>
-                        <div class="form-check getValue qusSet">
-                          <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                            onclick="return false;">
-                          <label class="form-check-label check" for="avgDis">
-                            Average Disposable Income
+                            Enrollments College/Graduate/Prof
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
                         <div class="form-check getEnroll qusSet">
-                          <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
+                          <input class="form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
                             id="enrollunemployment">
                           <label class="form-check-label check" for="enrollunemployment">
-                            Unemployment Rate
+                            Enrollments Not Enrolled
                           </label>
                           <a href="#" class="form-check-label"><i class="fa fa-question-circle"></i></a>
                         </div>
