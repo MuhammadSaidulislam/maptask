@@ -1,7 +1,6 @@
-
-
 body{
   background-color: #F1F5FB;
+  height: 100vh !important;
 }
 .row{
     margin-left:0px;
@@ -14,6 +13,7 @@ ul{
 a:hover{
 text-decoration: none;
 }
+
 .navbar-brand {
   float: left;
   height: 50px;
@@ -61,7 +61,7 @@ text-decoration: none;
     width: 86px;
     background: #4C84C5;
     position: fixed;
-    height: 100%;
+    height: calc(100vh - 55px);
     z-index: 10000;
     transition: all .4s ease 0s;
     top: 55px;
@@ -79,7 +79,7 @@ text-decoration: none;
     padding-left: 0;
     margin-left: 0;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 55px);
    
 }
 .comparePages{
@@ -91,10 +91,10 @@ text-decoration: none;
 #wrapper.active #sidebar-wrapper {
     left: 0px;
 }
-
+/* 
 #page-content-wrapper {
   width: 100%;
-}
+} */
 
 #sidebar_menu li a, .sidebar-nav li a {
     color: #999;
@@ -297,9 +297,15 @@ margin-top: 15px;
  letter-spacing: 1px;
 }
 .mapPosition{
-  position: relative;
-  width: 100%;
+  position: fixed;
+  /* width: 100%; */
+  /* height: 100%; */
+  height: calc(100vh - 55px);
 }
+/* .mapPosition img{
+  min-width: 100%;
+  height: 100%;
+} */
 .mapLocation{
   width: 100%;
   height: calc(100vh - 55px);
@@ -310,7 +316,7 @@ margin-top: 15px;
 }
 /* footer box */
 #positionSet{
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   left: 25%;
   right: 25%;
@@ -318,6 +324,9 @@ margin-top: 15px;
   padding-top: 200px;
   z-index: 999;
   width: 500px;
+
+
+
 }
 .centerFooter{
   display: inline;
@@ -896,7 +905,7 @@ margin: 5px auto;
 /* report */
 
 .sidenav {
-  height: 100vh;
+  /* height: 100vh; */
   width: 0;
   position: fixed;
   z-index: 1;
@@ -1007,7 +1016,7 @@ margin-bottom: 5px;
 }
 .bottomLogout{
   position: absolute;
-  bottom: 60px;
+  bottom: 0px;
   text-align: center;
   width: 100%;
 }
@@ -1069,7 +1078,7 @@ padding: 0px 0px;
   }
  
 }
-/* @media screen and (max-width: 750px) {
+ /* @media screen and (max-width: 750px) {
   #positionSet {
     position: fixed;
     bottom: 50px;
@@ -1079,7 +1088,7 @@ padding: 0px 0px;
     padding-top: 200px;
     z-index: 1000000;
 }
-} */
+}  */
 @media screen and (min-width: 1290px) {
   #searchBox{
     width: 35%;
@@ -1273,7 +1282,7 @@ margin: 5px 8px;
 
 /* Boundaries */
 .boundaries{
-  position: absolute;
+  position: fixed;
   bottom: 50px;
   right: 15px;
   width: 65px;
@@ -1628,5 +1637,139 @@ height: 100px;
   .navBox{
     width: 57%;
     padding-left: 10px;
+  }
+}
+
+
+/* START TOOLTIP STYLES */
+[tooltip] {
+  position: relative; /* opinion 1 */
+  z-index: 999999999;
+}
+
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none; /* opinion 2 */
+  font-size: .9em; /* opinion 3 */
+  line-height: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+[tooltip]::before {
+  content: '';
+  border: 5px solid transparent; /* opinion 4 */
+  z-index: 1001; /* absurdity 1 */
+}
+[tooltip]::after {
+  content: attr(tooltip); /* magic! */
+  
+  /* most of the rest of this is opinion */
+  font-family: Helvetica, sans-serif;
+  text-align: left;
+  
+  /* 
+    Let the content set the size of the tooltips 
+    but this will also keep them from being obnoxious
+    */
+  width: 300px;
+  /* height: 200px; */
+  /* max-width: 21em; */
+
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 17px;
+  padding: 1ch 1.5ch;
+  border-radius: .3ch;
+  box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+  background: #333;
+  color: #fff;
+  z-index: 1000000; /* absurdity 2 */
+}
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after {
+  display: block;
+}
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important;
+}
+
+
+
+/* FLOW: RIGHT */
+[tooltip][flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333;
+  right: calc(0em - 15px);
+  transform: translate(.5em, -50%);
+}
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 15px);
+  transform: translate(.5em, -50%);
+}
+
+/* KEYFRAMES */
+@-webkit-keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes tooltips-vert {
+  to {
+    opacity: .9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@-webkit-keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes tooltips-horz {
+  to {
+    opacity: .9;
+    transform: translate(0, -50%);
+  }
+}
+
+/* FX All The Things */ 
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after {
+  -webkit-animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vert 300ms ease-out forwards;
+}
+
+
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  -webkit-animation: tooltips-horz 300ms ease-out forwards;
+          animation: tooltips-horz 300ms ease-out forwards;
+}
+
+@media screen and (max-width: 450px) {
+  
+  #wrapper.active{
+    padding-left: 0px;
+  }
+  #sidebar-wrapper{
+    display: none;
   }
 }
