@@ -230,7 +230,7 @@ var myChart = new Chart(ctx1, {
 
 // Bottom Navbar opup
 function footerShow(id) {
-  let allid = ['forecast','indicators', 'housing','community','enroll','risk','mobile','forecast1']
+  let allid = ['forecast','indicators', 'housing','community','enroll','risk','mobile','sidebar']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -242,7 +242,7 @@ function footerShow(id) {
 
 
 function footerShow1(id) {
-  let allid = ['forecast1','indicators1','housing1']
+  let allid = ['forecast1','indicators1', 'housing1','community1','enroll1','risk1']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -262,6 +262,10 @@ function boundaries() {
 function filterShow() {
   document.getElementById("filterdetail").classList.toggle("show");
 }
+function filterShow1() {
+  document.getElementById("filterdetail1").classList.toggle("show");
+}
+
 
 // checkbox uncheck after refresh
 $(document).ready(function () {

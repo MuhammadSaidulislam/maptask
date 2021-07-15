@@ -213,7 +213,7 @@
 
         <!-- report section start -->
         <div id="mySidenav" class="sidenav">
-          <a style="font-size:15px;cursor:pointer; float: right;" href="javascript:void(0)" id="closeArrow"
+          <a style="font-size:15px;cursor:pointer; float: right; margin-right: 15px;" href="javascript:void(0)" id="closeArrow"
             onclick="closeNav()">
             <i class="fa fa-times-circle"></i></a>
           <h5>Growth rate: Last 6 months</h5>
@@ -793,9 +793,61 @@
 
               <!-- Mobile Show-->
               <div class="mobile-flex borderOff">
+                <!-- Sidebar -->
+                <div class="dropdown">
+                  <a onclick="footerShow('sidebar')" class="dropbtn forecast">
+                    <p id="ForecastHide"><i style="color: #099D20;" class="fa fa-bars"></i> Sidebar</p>
+                  </a>
+                  <div id="sidebar" class="mobile-content mobilesidebar">
+                    <a href="#">Properties</a>
+                    <a href="index.html">Map</a>
+                    <a href="compare.html">Compare</a>
+                    <a onclick="filterShow1()">Filter</a>
+                    <div class="filterdetail dropdown-content" id="filterdetail1">
+                      <div style="max-width: 500px; display: block; margin: auto;">
+                        <div class="game-progress-bar-container game-count-5">
+                          <div class="progress-steps-section">
+                            <ul class="progress-steps">
+                              <li>
+                                <div class="progress-step-item"></div>
+                                <p>1%</p>
+                              </li>
+                              <li>
+                                <div class="progress-step-item">
+                                </div>
+                                <p>10%</p>
+                              </li>
+                              <li class="game-active">
+                                <div class="progress-step-item"></div>
+                                <p>40%</p>
+                              </li>
+                              <li>
+                                <div class="progress-step-item"></div>
+                                <p>60%</p>
+                              </li>
+                              <li>
+                                <div class="progress-step-item"></div>
+                                <p>80%</p>
+                              </li>
+                              <li>
+                                <div class="progress-step-item"></div>
+                                <p>100%</p>
+                              </li>
+                            </ul>
+                            <div class="progress-steps-connector game-3">
+                              <div class="progress-indicator"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <p>Filter to the top local markets based upon your custom search, instantly</p>
+                    </div>
+                    <a href="#" onclick="openNav()">Report</a>
+                  </div>
+                </div>
+                <!-- Map Layer -->
                 <div class="dropdown">
                   <a onclick="footerShow('mobile')" class="dropbtn forecast">
-
                     <p id="ForecastHide"><i class="fa fa-layer-group"></i> Map Layers</p>
                   </a>
                   <div id="mobile" class="mobile-content mobileHeight">
@@ -900,6 +952,104 @@
                         </div>
                       </div>
 
+                      <!-- Risk -->
+                      <div class="mobile-item-left">
+                        <div class="dropdown">
+                          <a onclick="footerShow1('risk1')" class="dropbtn risk">
+                            <p><i class="fa fa-exclamation-triangle"></i> Risk</p>
+                          </a>
+                          <div id="risk1" class="mobile-dropdown riskHeight">
+                            <div class="form-check getRisk qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Total In Poverty"
+                                id="Mriskmedian">
+                              <label class="form-check-label check" for="Mriskmedian">
+                                Total In Poverty
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgIncome">
+                                Crime Index
+                              </label>
+                            </div>
+                            <div class="form-check getRisk qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Number of Businesses"
+                                id="Mriskunemployment">
+                              <label class="form-check-label check" for="Mriskunemployment">
+                                Number of Businesses
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgNet">
+                                Number of Jobs
+                              </label>
+                            </div>
+                            <div class="form-check getRisk qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="GDP" id="MriskmedianDis">
+                              <label class="form-check-label check" for="MriskmedianDis">
+                                GDP
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Enrollments -->
+                      <div class="mobile-item-left">
+                        <div class="dropdown">
+                          <a onclick="footerShow1('enroll1')" class="dropbtn enroll">
+                            <p><i class="fa fa-user-plus"></i>Enrollments</p>
+                          </a>
+                          <div id="enroll1" class="mobile-dropdown enrollHeight">
+                            <div class="form-check getEnroll qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Total Educated"
+                                id="Menrollmedian">
+                              <label class="form-check-label check" for="Menrollmedian">
+                                Total Educated
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgIncome">
+                                Enrollments Nursery/Preschool
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
+                                onclick="return false;">
+                              <label class="form-check-label" for="MmedianNet">
+                                Enrollments Kindergarten/Elementary
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgNet">
+                                Enrollments High School
+                              </label>
+                            </div>
+                            <div class="form-check getEnroll qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox"
+                                value="Enrollments College/Graduate/Prof" id="MenrollmedianDis">
+                              <label class="form-check-label check" for="MenrollmedianDis">
+                                Enrollments College/Graduate/Prof
+                              </label>
+                            </div>
+                            <div class="form-check getEnroll qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
+                                id="Menrollunemployment">
+                              <label class="form-check-label check" for="Menrollunemployment">
+                                Enrollments Not Enrolled
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                       <!-- Housing -->
                       <div class="mobile-item-left">
                         <div class="dropdown">
@@ -996,12 +1146,125 @@
                         </div>
                       </div>
 
+
+                      <!-- Community -->
+                      <div class="mobile-item-left">
+                        <div class="dropdown">
+                          <a onclick="footerShow1('community1')" class="dropbtn community">
+                            <p><i class="fa fa-users"></i> Community</p>
+                          </a>
+                          <div id="community1" class="mobile-dropdown">
+                            <div class="form-check getCommunity qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Population"
+                                id="Mcommunitymedian">
+                              <label class="form-check-label check" for="Mcommunitymedian">
+                                Population
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgIncome">
+                                Migration
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
+                                onclick="return false;">
+                              <label class="form-check-label" for="MmedianNet">
+                                Male Population
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgNet">
+                                Female Population
+                              </label>
+                            </div>
+                            <div class="form-check getCommunity qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Median Age Male"
+                                id="McommunitymedianDis">
+                              <label class="form-check-label check" for="McommunitymedianDis">
+                                Median Age Male
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Median Age Female
+                              </label>
+                            </div>
+                            <div class="form-check getCommunity qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="Population in Households"
+                                id="Mcommunityunemployment">
+                              <label class="form-check-label check" for="Mcommunityunemployment">
+                                Population in Households
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Persons per Households
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Total Households
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                One Person Households
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Married Couple Households
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Married Couple Households with children
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Married Couple Households without children
+                              </label>
+                            </div>
+                            <div class="form-check getValue qusSet mobileSet">
+                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
+                                onclick="return false;">
+                              <label class="form-check-label check" for="MavgDis">
+                                Vehicles Per Household
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
                     </div>
                   </div>
                 </div>
+
               </div>
 
-              <!-- MOnile design -->
+              <!-- Mobile design -->
 
             </div>
           </div>
