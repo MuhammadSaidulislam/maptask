@@ -230,7 +230,7 @@ var myChart = new Chart(ctx1, {
 
 // Bottom Navbar opup
 function footerShow(id) {
-  let allid = ['forecast','indicators', 'housing','community','enroll','risk','mobile','sidebar']
+  let allid = ['forecast','indicators', 'housing','community','enroll','risk','mobile','sidebar','bound','filterBox']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -281,4 +281,17 @@ var value = radios.length>0? radios[0].value: null;
 
 function myFunction() {
   document.getElementById("myDropdown1").classList.toggle("show");
+}
+
+
+// acttive class
+
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("activee");
+  current[0].className = current[0].className.replace(" activee", "");
+  this.className += " activee";
+  });
 }

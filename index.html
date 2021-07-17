@@ -67,7 +67,7 @@
             <div class="form-check">
               <input class="form-check-input check" type="radio" value="" id="6month" name="navbar">
               <label class="form-check-label check" for="6month">
-                6 Months
+                6-Months
               </label>
             </div>
           </li>
@@ -75,7 +75,7 @@
             <div class="form-check">
               <input class="form-check-input check" type="radio" value="" id="12month" name="navbar">
               <label class="form-check-label check" for="12month">
-                12 Months
+                12-Months
               </label>
             </div>
           </li>
@@ -83,7 +83,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" value="" id="24month" name="navbar">
               <label class="form-check-label" for="24month">
-                24 Months
+                24-Months
               </label>
             </div>
           </li>
@@ -91,7 +91,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" value="" id="36month" name="navbar">
               <label class="form-check-label" for="36month">
-                36 Months
+                36-Months
               </label>
             </div>
           </li>
@@ -102,9 +102,9 @@
 
   <div id="wrapper" class="active">
     <div id="sidebar-wrapper">
-      <ul>
+      <ul id="myDIV">
         <li class="inbox">
-          <a href="#">
+          <a class="btn" href="#">
             <i class="fa fa-home">
               <span class="icon-bg"></span>
             </i>
@@ -112,7 +112,7 @@
           </a>
         </li>
         <li class="inbox">
-          <a href="index.html">
+          <a class="btn activee" href="index.html">
             <i class="fa fa-map-marked">
               <span class="icon-bg"></span>
             </i>
@@ -120,7 +120,7 @@
           </a>
         </li>
         <li class="inbox">
-          <a href="compare.html">
+          <a class="btn" href="compare.html">
             <i class="fa fa-line-chart">
               <span class="icon-bg"></span>
             </i>
@@ -128,14 +128,14 @@
           </a>
         </li>
         <li class="inbox filterPos dropdown">
-          <a onclick="filterShow()">
+          <a class="btn" href="#" onclick="footerShow('filterBox')">
             <i class="fa fa-filter">
               <span class="icon-bg"></span>
             </i>
             <p>Filter</p>
           </a>
           <!-- filter -->
-          <div class="filterdetail dropdown-content" id="filterdetail">
+          <div class="filterdetail dropdown-content" id="filterBox">
             <div style="max-width: 500px; display: block; margin: auto;">
               <div class="game-progress-bar-container game-count-5">
                 <div class="progress-steps-section">
@@ -176,13 +176,14 @@
           </div>
         </li>
         <li class="inbox">
-          <a href="#" onclick="openNav()">
+          <a class="btn" href="#" onclick="openNav()">
             <i class="fa fa-file-alt">
               <span class="icon-bg"></span>
             </i>
             <p>Report</p>
           </a>
         </li>
+
         <li class="bottomLogout">
           <img
             src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -194,6 +195,7 @@
             <p>Logout</p>
           </a>
         </li>
+
       </ul>
     </div>
 
@@ -213,10 +215,13 @@
 
         <!-- report section start -->
         <div id="mySidenav" class="sidenav">
-          <a style="font-size:15px;cursor:pointer; float: right; margin-right: 15px;" href="javascript:void(0)" id="closeArrow"
+            <a style="font-size:15px;cursor:pointer; float: right; margin-right: 15px;" href="javascript:void(0)" id="closeArrow"
             onclick="closeNav()">
             <i class="fa fa-times-circle"></i></a>
           <h5>Growth rate: Last 6 months</h5>
+          <div class="reportBtn text-center">
+            <button class="btn btn-info">Generate Report</button>
+          </div>
           <div class="viewReport">
             <p>San Jose, CA, United States</p>
             <p>San Jose CA 95113</p>
@@ -246,9 +251,6 @@
             <div class="cahrtTwo">
               <canvas id="myChartTwo"></canvas>
             </div>
-            <div class="reportBtn text-center">
-              <button class="btn btn-info">Generate Report</button>
-            </div>
           </div>
         </div>
 
@@ -265,7 +267,7 @@
                   </a>
                   <div id="forecast" class="dropdown-content forecastHeight">
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="12-Month Forecast" id="12months">
+                      <input class="form-check-input check" type="radio" value="12-Month Forecast" id="12months" name="navbar">
                       <label class="form-check-label check" for="12months">
                         12-Month Forecast
                       </label>
@@ -274,7 +276,7 @@
                         flow="right"><i class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="24-Month Forecast" id="24months">
+                      <input class="form-check-input check" type="radio" value="24-Month Forecast" id="24months" name="navbar">
                       <label class="form-check-label check" for="24months">
                         24-Month Forecast
                       </label>
@@ -283,7 +285,7 @@
                         flow="right"><i class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="36-Month Forecast " id="36months">
+                      <input class="form-check-input check" type="radio" value="36-Month Forecast " id="36months" name="navbar">
                       <label class="form-check-label check" for="36months">
                         36-Month Forecast
                       </label>
@@ -395,6 +397,7 @@
                       <a class="form-check-label"
                         tooltip="the current estimated value of owner-occupied housing (not renter-occupied apartments or houses).  Home values can be used as a proxy for general economic trend analysis in targeted Zip Code or submarket.  Updated quarterly."
                         flow="right"><i class="fa fa-question-circle"></i></a>
+
                     </div>
                     <div class="form-check getValue qusSet">
                       <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
@@ -1303,10 +1306,10 @@
         </div>
 
         <!-- Boundaries -->
-        <div class="boundaries">
+        <div class="boundaries" id="boundaries11">
           <div class="boundaries-item-left">
             <div class="dropdown">
-              <a onclick="boundaries()" class="innerBound">
+              <a onclick="footerShow('bound')" class="innerBound">
                 <div class="boundaries-container">
                   <img src="images/map.png" alt="Snow" style="width:100%;">
                   <div class="bottom-left">
@@ -1314,7 +1317,7 @@
                   </div>
                 </div>
               </a>
-              <div id="boundaries" class="boundaries-content">
+              <div id="bound" class="boundaries-content">
                 <div class="flex-box">
                   <div class="boundaries-text">
                     <span>Selct Geographical <br> Boundaries</span>
