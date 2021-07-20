@@ -287,7 +287,7 @@ function myFunction() {
 // acttive class
 
 var header = document.getElementById("myDIV");
-var btns = header.getElementsByClassName("btn");
+var btns = header.getElementsByClassName("btnn");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
   var current = document.getElementsByClassName("activee");
@@ -295,3 +295,32 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " activee";
   });
 }
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+
+// tolltip
+
+var list = document.querySelector('.toltip');
+var index;
+var css;
+var index2;
+
+list.addEventListener('mouseenter', function(ev) {
+  if (ev.target.tagName === 'SPAN') {
+    console.log(ev.target);
+    var rect = ev.target.getBoundingClientRect();
+    var top = rect.top;
+    var bottom = rect.bottom;
+    var left = rect.right;
+    
+    css = document.getElementById('css');
+    index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
+    index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
+  } else if (css && css.sheet) {
+   css.sheet.removeRule(index)
+   css.sheet.removeRule(index2)
+  }
+}, true);4

@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>ZipAnalyser</title>
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipAnalyser</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -99,61 +101,62 @@
       
 
   <div id="wrapper" class="active">
+
     <div id="sidebar-wrapper">
-      <!-- <ul id="sidebar_menu" class="sidebar-nav">
-        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"
-              class="glyphicon glyphicon-align-justify"></span></a></li>
-      </ul> -->
-      <!--  <ul class="sidebar-nav" id="sidebar">
-        <li><a>Link1<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-        <li><a>link2<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-      </ul> -->
-
-
-      <ul>
-        <li class="inbox">
-          <a href="#">
-            <i class="fa fa-home">
-              <span class="icon-bg"></span>
-            </i>
-            <p>Properties</p>
-          </a>
-        </li>
-        <li class="inbox">
-          <a href="index.html">
-            <i class="fa fa-map-marked">
-              <span class="icon-bg"></span>
-            </i>
-            <p>Map</p>
-          </a>
-        </li>
-        <li class="inbox">
-          <a href="compare.html">
-            <i class="fa fa-line-chart">
-              <span class="icon-bg"></span>
-            </i>
-            <p>Compare</p>
-          </a>
-        </li>
-        <li class="inbox">
-          <a href="#" onclick="filterHide()">
-            <i class="fa fa-filter">
-              <span class="icon-bg"></span>
-            </i>
-            <p>Filter</p>
-          </a>
-        </li>
-        <li class="inbox">
-          <a href="#">
-            <i class="fa fa-file-alt">
-              <span class="icon-bg"></span>
-            </i>
-            <p>Report</p>
-          </a>
-        </li>
-
-      </ul>
-    </div>
+        <ul id="myDIV">
+          <li class="inbox">
+            <a class="btnn" href="index.html">
+              <i class="fa fa-home">
+                <span class="icon-bg"></span>
+              </i>
+              <p>Properties</p>
+            </a>
+          </li>
+          <li class="inbox">
+            <a class="btnn" href="index.html">
+              <i class="fa fa-map-marked">
+                <span class="icon-bg"></span>
+              </i>
+              <p>Map</p>
+            </a>
+          </li>
+          <li class="inbox">
+            <a class="btnn activee" href="compare.html">
+              <i class="fa fa-line-chart">
+                <span class="icon-bg"></span>
+              </i>
+              <p>Compare</p>
+            </a>
+          </li>
+          <li class="inbox filterPos dropdown">
+            <a class="btnn" href="#">
+              <i class="fa fa-filter">
+                <span class="icon-bg"></span>
+              </i>
+              <p>Filter</p>
+            </a>
+          </li>
+          <li class="inbox">
+            <a class="btnn" href="#" onclick="openNav()">
+              <i class="fa fa-file-alt">
+                <span class="icon-bg"></span>
+              </i>
+              <p>Report</p>
+            </a>
+          </li>
+          <li class="bottomLogout">
+            <img
+              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="">
+            <a href="#" class="upgrade">
+              <p>Upgrade</p>
+            </a>
+            <a href="#" class="logout">
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+      </div>
 
     <!-- Page content -->
     <div id="page-content-wrapper">
