@@ -1,3 +1,33 @@
+// atleast three checbox select
+
+var risklimit = 3;
+$('input.riskCheck').on('click', function (evt) {
+  if ($('.riskCheck:checked').length > risklimit) {
+    this.checked = false;
+  }
+});
+
+var enrolllimit = 3;
+$('input.enrollCheck').on('click', function (evt) {
+  if ($('.enrollCheck:checked').length > enrolllimit) {
+    this.checked = false;
+  }
+});
+
+var communitylimit = 3;
+$('input.communityCheck').on('click', function (evt) {
+  if ($('.communityCheck:checked').length > communitylimit) {
+    this.checked = false;
+  }
+});
+
+var housinglimit = 3;
+$('input.housingCheck').on('click', function (evt) {
+  if ($('.housingCheck:checked').length > housinglimit) {
+    this.checked = false;
+  }
+});
+
 
 
 function grwothInfo() {
@@ -130,17 +160,17 @@ $(document).ready(function () {
 
 // Sidebar report
 function openNav() {
- // document.getElementById("mainnn").style.marginRight = "373px";
+  // document.getElementById("mainnn").style.marginRight = "373px";
   document.getElementById("mySidenav").style.width = "387px";
- // document.getElementById("positionSet").style.marginLeft = "30%";
-  
+  // document.getElementById("positionSet").style.marginLeft = "30%";
+
   document.getElementById("openArrow").style.display = "none";
   document.getElementById("closeArrow").style.display = "block";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
- // document.getElementById("positionSet").style.marginLeft = "50%";
+  // document.getElementById("positionSet").style.marginLeft = "50%";
   document.getElementById("mainnn").style.marginRight = "0";
   document.body.style.backgroundColor = "white";
   document.getElementById("openArrow").style.display = "block";
@@ -230,24 +260,23 @@ var myChart = new Chart(ctx1, {
 
 // Bottom Navbar opup
 function footerShow(id) {
-  let allid = ['forecast','indicators', 'housing','community','enroll','risk','mobile','sidebar','bound','filterBox']
+  let allid = ['forecast', 'indicators', 'housing', 'community', 'enroll', 'risk', 'mobile', 'sidebar', 'bound', 'filterBox']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
       document.getElementById(allid[i]).classList.remove("show");
-      console.log(allid[i]);
+      console.log('allID' + allid[i]);
     }
   }
 }
 
 
 function footerShow1(id) {
-  let allid = ['forecast1','indicators1', 'housing1','community1','enroll1','risk1']
+  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
       document.getElementById(allid[i]).classList.remove("show");
-      console.log(allid[i]);
     }
   }
 }
@@ -268,13 +297,13 @@ function filterShow1() {
 
 
 // checkbox uncheck after refresh
-$(document).ready(function () {
-  $(':checkbox:checked').prop('checked', false);
-});
+// $(document).ready(function () {
+//   $(':checkbox:checked').prop('checked', false);
+// });
 
 
 var radios = document.querySelectorAll('input[type="radio"]:checked');
-var value = radios.length>0? radios[0].value: null;
+var value = radios.length > 0 ? radios[0].value : null;
 
 
 
@@ -289,16 +318,17 @@ function myFunction() {
 var header = document.getElementById("myDIV");
 var btns = header.getElementsByClassName("btnn");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("activee");
-  current[0].className = current[0].className.replace(" activee", "");
-  this.className += " activee";
+  btns[i].addEventListener("click", function () {
+    var current = document.getElementsByClassName("activee");
+    current[0].className = current[0].className.replace(" activee", "");
+    this.className += " activee";
   });
 }
 
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
 });
+
 
 
 // tolltip
@@ -308,19 +338,48 @@ var index;
 var css;
 var index2;
 
-list.addEventListener('mouseenter', function(ev) {
+list.addEventListener('mouseenter', function (ev) {
   if (ev.target.tagName === 'SPAN') {
     console.log(ev.target);
     var rect = ev.target.getBoundingClientRect();
     var top = rect.top;
     var bottom = rect.bottom;
     var left = rect.right;
-    
+
     css = document.getElementById('css');
     index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
     index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
   } else if (css && css.sheet) {
-   css.sheet.removeRule(index)
-   css.sheet.removeRule(index2)
+    css.sheet.removeRule(index)
+    css.sheet.removeRule(index2)
   }
-}, true);4
+}, true); 4
+
+
+// Growth rate show
+function growthRadio(event) {
+  document.getElementById("demo").innerText = event.target.value;
+}
+
+function toggle(source) {
+  checkboxes = document.getElementsByName('check1');
+  for (var i = 0, n = checkboxes.length; i < n; i++) {
+    checkboxes[i].checked = source.checked;
+
+  }
+}
+
+
+
+
+
+
+$(document).on('click.bs.dropup.data-api', '.dropup.keep-inside-clicks-open', function (e) {
+  e.stopPropagation();
+});
+
+
+
+
+
+

@@ -495,7 +495,7 @@ border-left: 2px solid #e1e1e1;
     font-size: 16px;
 }
 
-.growInfo .closeBtn span {
+.growInfo .closeBtn p {
     float: left;
     padding-left: 5px;
     color: #fff;
@@ -1338,7 +1338,7 @@ z-index: 1000000;
     height: 20px;
     /* background-color: #951414; */
     position: fixed;
-    bottom: 76px;
+    bottom: 90px;
     margin-left: 107px;
     border-top: 17px solid #000000b4;
     border-left: 10px solid transparent;
@@ -1351,7 +1351,7 @@ z-index: 1000000;
     height: 20px;
     /* background-color: #951414; */
     position: fixed;
-    bottom: 76px;
+    bottom: 90px;
     margin-left: 160px;
     border-top: 17px solid #000000b4;
     border-left: 10px solid transparent;
@@ -1373,7 +1373,7 @@ z-index: 1000000;
 
 .communityHeight {
     /* height: auto; */
-    width: 331px;
+    width: 333px;
     /* overflow-y: auto;  */
     left: -128px;
     height: 200px;
@@ -1793,16 +1793,14 @@ text-align: center;
     border-left: 1px solid #000;
 }
 
-
+/* 
 .filterPos .dropdown-content {
-    display: none;
-    position: absolute;
-    /* bottom: 77px; */
+
+     bottom: 77px; 
     z-index: 1;
     height: 100px;
     left: 90px;
     width: 300px;
-    display: none;
     background-color: 222;
     background-color: rgba(0, 0, 0, 0.65);
     padding: 11px 30px;
@@ -1811,7 +1809,7 @@ text-align: center;
 
 .filterPos .dropdown-content:before {
     display: none;
-}
+} */
 
 .filterPos .dropdown-content a {
     color: black;
@@ -1820,7 +1818,7 @@ text-align: center;
     display: block;
 }
 
-.dropdown .dropdown-content .qusSet a i {
+.btn-group .dropdown-content .qusSet a i {
     font-size: 14px;
     color: #fff;
 }
@@ -2245,3 +2243,28 @@ right: calc(0em - 15px);
     transform: translate(.5em, -50%);
   } 
 
+
+
+
+.boundaries-item-left .dropup .dropdown-menu,
+   .navbar-fixed-bottom .dropdown .dropdown-menu {
+    top:auto;
+    bottom:60px;
+    margin-bottom:2px
+}
+
+
+#myDIV .dropup .dropdown-menu,
+   .navbar-fixed-bottom .dropdown .dropdown-menu {
+    top:auto;
+    width: 100%;
+    z-index: 1;
+    height: 100px;
+    left: 90px;
+    width: 300px;
+    background-color: 222;
+    background-color: rgba(0, 0, 0, 0.65);
+    padding: 11px 30px;
+    border-radius: 15px;
+    bottom: -40px;
+}

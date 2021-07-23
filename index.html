@@ -69,7 +69,7 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="radio" value="" id="6month" name="navbar">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio" value="6-Months" id="6month" name="navbar">
               <label class="form-check-label check" for="6month">
                 6-Months
               </label>
@@ -77,7 +77,7 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="radio" value="" id="12month" name="navbar">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio" value="12-Months" id="12month" name="navbar">
               <label class="form-check-label check" for="12month">
                 12-Months
               </label>
@@ -85,7 +85,7 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input" type="radio" value="" id="24month" name="navbar">
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio" value="24-Months" id="24month" name="navbar">
               <label class="form-check-label" for="24month">
                 24-Months
               </label>
@@ -93,7 +93,7 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input" type="radio" value="" id="36month" name="navbar">
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio" value="36-Months" id="36month" name="navbar">
               <label class="form-check-label" for="36month">
                 36-Months
               </label>
@@ -132,15 +132,15 @@
             <p>Compare</p>
           </a>
         </li>
-        <li class="inbox filterPos dropdown">
-          <a class="btnn" href="#" onclick="footerShow('filterBox')">
+        <li class="inbox dropup keep-inside-clicks-open">
+          <a type="button" class="btn dropdown-toggle btnn" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-filter">
               <span class="icon-bg"></span>
             </i>
             <p>Filter</p>
           </a>
           <!-- filter -->
-          <div class="filterdetail dropdown-content" id="filterBox">
+          <div class="dropdown-menu">
             <div style="max-width: 500px; display: block; margin: auto;">
               <div class="game-progress-bar-container game-count-5">
                 <div class="progress-steps-section">
@@ -177,7 +177,7 @@
                 </div>
               </div>
             </div>
-            <p>Filter to the top local markets based upon your custom search, instantly</p>
+            <p style="color: #fff;">Filter to the top local markets based upon your custom search, instantly</p>
           </div>
         </li>
         <li class="inbox">
@@ -257,20 +257,61 @@
           </div>
         </div>
 
+
         <!-- report section  end -->
         <div id="positionSet">
           <div class="centerFooter">
             <div class="flex-container">
+            
               <!-- Forecast -->
               <div class="flex-item-left disNone borderOff">
-                <div class="dropdown">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle dropbtn forecast" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-file"></i>
+                    <p id="ForecastHide">Forecast</p>
+                  </a>
+                  <div class="dropdown-menu dropdown-content forecastHeight">
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" onClick="toggle(this)" type="radio" value="12-Month Forecast" id="12months"
+                          name="navbar1">
+                        <label class="form-check-label check" for="12months">
+                          12-Month Forecast
+                        </label>
+                        <a data-toggle="tooltip" data-placement="right"
+                          title="our 12-month housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly.">
+                          <i class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" type="radio" value="24-Month Forecast" id="24months"
+                          name="navbar1">
+                        <label class="form-check-label check" for="24months">
+                          24-Month Forecast
+                        </label>
+                        <a data-toggle="tooltip" data-placement="right"
+                          title="our 24-month real housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly."><i
+                            class="fa fa-question-circle"></i></a>
+                      </div>
+                      <div class="form-check getIndicators qusSet">
+                        <input class="form-check-input check" type="radio" value="36-Month Forecast " id="36months"
+                          name="navbar1">
+                        <label class="form-check-label check" for="36months">
+                          36-Month Forecast
+                        </label>
+                        <a data-toggle="tooltip" data-placement="right"
+                          title="our 36-month real housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly."><i
+                            class="fa fa-question-circle"></i></a>
+                      </div>
+                  </div>
+                </div>
+
+                <!-- <div class="dropdown">
                   <a onclick="footerShow('forecast')" class="dropbtn forecast">
                     <i class="fa fa-file"></i>
                     <p id="ForecastHide">Forecast</p>
                   </a>
                   <div id="forecast" class="dropdown-content forecastHeight">
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="radio" value="12-Month Forecast" id="12months"
+                      <input class="form-check-input check" onClick="toggle(this)" type="radio" value="12-Month Forecast" id="12months"
                         name="navbar">
                       <label class="form-check-label check" for="12months">
                         12-Month Forecast
@@ -300,28 +341,29 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                   </div>
-                </div>
+                </div> -->
+                
+              
               </div>
               <!-- Indicators -->
               <div class="flex-item-left disNone">
-                <div class="dropdown">
-                  <a onclick="footerShow('indicators')" class="dropbtn indicators">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle dropbtn indicators" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-tachometer-alt"></i>
                     <p>Indicators</p>
                   </a>
-                  <div id="indicators" class="dropdown-content indicatorHeight">
+                  <div class="dropdown-menu dropdown-content indicatorHeight">
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Median Income" id="Indomedian">
-                      <label class="form-check-label check" for="Indomedian">
+                      <input class="form-check-input check indoCheck" name="check1" type="checkbox" value="Median Income" id="IndomedianIncome">
+                      <label class="form-check-label check" for="IndomedianIncome">
                         Median Income
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the amount, which divides the income distribution into two equal groups.   Half, have incomes above the median and half have incomes below the median.   Median income growth is a core leading economic indicator. Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
-                        onclick="return false;">
+                    <div class="form-check getIndicators qusSet">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Income" id="avgIncome" name="check1">
                       <label class="form-check-label check" for="avgIncome">
                         Average Income
                       </label>
@@ -329,8 +371,8 @@
                         title="the mean household income is calculated by dividing the total household income in the Zip Code or submarket by the number of households.   Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
+                    <div class="form-check getIndicators qusSet">
+                      <input class="form-check-input indoCheck" type="checkbox" value="Median Net Worth" id="medianNet" name="check1">
                       <label class="form-check-label" for="medianNet">
                         Median Net Worth
                       </label>
@@ -339,8 +381,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
-                        id="Indounemployment">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Unemployment Rate"
+                        id="Indounemployment" name="check1">
                       <label class="form-check-label check" for="Indounemployment">
                         Unemployment Rate
                       </label>
@@ -348,9 +390,9 @@
                         title="the change in the percentage of the total labor force that is employed, but actively seeking employment and willing to work.  The unemployment growth rate is a closely watched statistic because a rising rate is seen as a sign of a weakening economy that may call for a cut in interest rate. Similarly, a falling rate indicates a growing economy, which is usually accompanied by a higher inflation rate and may call for an increase in interest rates.   Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgNet"
-                        onclick="return false;">
+                    <div class="form-check getIndicators qusSet">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Net Worth" id="avgNet"
+                         name="check1">
                       <label class="form-check-label check" for="avgNet">
                         Average Net Worth
                       </label>
@@ -359,8 +401,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
-                        id="IndomedianDis">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Median Disposable Income"
+                        id="IndomedianDis" name="check1">
                       <label class="form-check-label check" for="IndomedianDis">
                         Median Disposable Income
                       </label>
@@ -368,9 +410,9 @@
                         title="is the amount of money that a household has available for spending and saving after income taxes.  Disposable personal income quarterly growth is a key leading economic indicator used to gauge the overall state of any given market or submarket.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
+                    <div class="form-check getIndicators qusSet">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Disposable Income" id="avgDis"
+                         name="check1">
                       <label class="form-check-label check" for="avgDis">
                         Average Disposable Income
                       </label>
@@ -384,17 +426,17 @@
 
               <!-- Housing -->
               <div class="flex-item-left disNone housingDropdown">
-                <div class="dropdown">
-                  <a onclick="footerShow('housing')" class="dropbtn housing">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle dropbtn housing" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-house-user"></i>
                     <p>Housing</p>
                   </a>
-                  <div id="housing" class="dropdown-content housingHeight">
+                  <div class="dropdown-menu dropdown-content housingHeight">
                     <div class="bottomBox"></div>
                     <div class="form-check getHousing qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Median Home Value"
-                        id="housingmedian">
-                      <label class="form-check-label check" for="housingmedian">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Median Home Value"
+                        id="medianHome">
+                      <label class="form-check-label check" for="medianHome">
                         Median Home Value
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -402,29 +444,27 @@
                         <i class="fa fa-question-circle"></i>
                       </a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgIncome">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Average Home Value" id="avgHome">
+                      <label class="form-check-label check" for="avgHome">
                         Average Home Value
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the average estimated value and calculated by adding all the sale prices for homes sold in a specific Zip Code or submarket within the last quarter, and dividing that total by the number of properties sold within that Zip Code or submarket. Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
-                      <label class="form-check-label" for="medianNet">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input" type="checkbox" value="Affordability Index" id="affordabilityIndex">
+                      <label class="form-check-label" for="affordabilityIndex">
                         Affordability Index
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="an index that takes into account existing home prices and new home prices, compared to the median income in the selected Zip Code or submarket.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgNet"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgNet">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Renter Occupied Housing" id="renterHousing">
+                      <label class="form-check-label check" for="renterHousing">
                         Renter Occupied Housing
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -432,19 +472,18 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Owner Occupied Housing"
-                        id="housingmedianDis">
-                      <label class="form-check-label check" for="housingmedianDis">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Owner Occupied Housing"
+                        id="ownerOccupied">
+                      <label class="form-check-label check" for="ownerOccupied">
                         Owner Occupied Housing
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="is the number of owner-occupied units in the selected Zip Code or submarket.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Vacant Housing" id="vacantHousing">
+                      <label class="form-check-label check" for="vacantHousing">
                         Vacant Housing
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -452,59 +491,54 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Vacancy Rate"
-                        id="housingunemployment">
-                      <label class="form-check-label check" for="housingunemployment">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Vacancy Rate"
+                        id="vacancyRate">
+                      <label class="form-check-label check" for="vacancyRate">
                         Vacancy Rate
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the calculated percentage of all available rental property units, which are vacant or occupied in the Zip Code or submarket.   It is a useful metric for evaluating a rental property.  High vacancy rates indicate that the local real estate market is not renting well, on the other hand, low vacancy rates point to strong rental sales.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 1-Bedroom Rentals" id="oneBed">
+                      <label class="form-check-label check" for="oneBed">
                         Total 1-Bedroom Rentals
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="is the number of 1-Bedroom occupied rental units that are occupied and rented.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Group Quarters" id="groupQuarters">
+                      <label class="form-check-label check" for="groupQuarters">
                         Group Quarters
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the number of places where unrelated people and no one individual can claims “head of household,” such as college students and military personnel.   Group quarters include college residence halls, residential treatment centers, skilled nursing facilities, group homes, military barracks, correctional facilities, and workers’ dormitories.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 2-Bedroom Rentals" id="twoBed">
+                      <label class="form-check-label check" for="twoBed">
                         Total 2-Bedroom Rentals
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the number of 2-Bedroom occupied rental units that are occupied and rented.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 3-Bedroom Rentals" id="threeBed">
+                      <label class="form-check-label check" for="threeBed">
                         Total 3-Bedroom Rentals
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the number of 3-Bedroom occupied rental units that are occupied and rented.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getHousing qusSet">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total Studio Rentals" id="totalStudio">
+                      <label class="form-check-label check" for="totalStudio">
                         Total Studio Rentals
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -517,14 +551,14 @@
 
               <!-- Risk -->
               <div class="flex-item-left disNone">
-                <div class="dropdown">
-                  <a onclick="footerShow('risk')" class="dropbtn risk">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle risk" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-exclamation-triangle"></i>
                     <p>Risk</p>
                   </a>
-                  <div id="risk" class="dropdown-content riskHeight">
+                  <div class="dropdown-menu dropdown-content riskHeight">
                     <div class="form-check getRisk qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Total In Poverty" id="riskmedian">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Total In Poverty" id="riskmedian">
                       <label class="form-check-label check" for="riskmedian">
                         Total In Poverty
                       </label>
@@ -532,10 +566,9 @@
                         title="the total number of households that are defined by the census bureau that are below the poverty line.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgIncome">
+                    <div class="form-check getRisk qusSet">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Crime Index" id="crimeIndex">
+                      <label class="form-check-label check" for="crimeIndex">
                         Crime Index
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -543,19 +576,18 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getRisk qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Number of Businesses"
-                        id="riskunemployment">
-                      <label class="form-check-label check" for="riskunemployment">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Number of Businesses"
+                        id="numberfoBusiness">
+                      <label class="form-check-label check" for="numberfoBusiness">
                         Number of Businesses
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the number of businesses within and entering and in the selected Zip Code or submarket.  Typically, business growth is a good leading indicator of overall growth.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgNet"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgNet">
+                    <div class="form-check getRisk qusSet">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Number of Jobs" id="numberJobs">
+                      <label class="form-check-label check" for="numberJobs">
                         Number of Jobs
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -563,8 +595,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getRisk qusSet">
-                      <input class="form-check-input check" type="checkbox" value="GDP" id="riskmedianDis">
-                      <label class="form-check-label check" for="riskmedianDis">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="GDP" id="GDP">
+                      <label class="form-check-label check" for="GDP">
                         GDP
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -577,26 +609,25 @@
 
               <!-- Community -->
               <div class="flex-item-left disNone communityDropdown">
-                <div class="dropdown">
-                  <a onclick="footerShow('community')" class="dropbtn community">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle community" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-users"></i>
                     <p>Community</p>
                   </a>
-                  <div id="community" class="dropdown-content communityHeight">
+                  <div class="dropdown-menu dropdown-content communityHeight">
                     <div class="commbottomBox"></div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Population" id="communitymedian">
-                      <label class="form-check-label check" for="communitymedian">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Population" id="populationMedian">
+                      <label class="form-check-label check" for="populationMedian">
                         Population
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of individuals in the selected Zip Code or submarket that quarter. The sum of persons living in households and group quarters.  Population growth has a strong effect on Zip Code demand for housing. Investments with strong population and income growth are usually less risky and the combination usually leads to very high growth.  Population growth is a key leading indicator.  Updated quarterly.">
                         <i class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgIncome">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Migration" id="migration1">
+                      <label class="form-check-label check" for="migration1">
                         Migration
                       </label>
                       <a data-toggle="tooltip" data-placement="right" title="the number of household population changes attributable to births, deaths, and net 
@@ -604,19 +635,18 @@
                       "><i class="fa fa-question-circle"></i></a>
 
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
-                      <label class="form-check-label" for="medianNet">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input" type="checkbox" value="Male Population" id="malePopulation">
+                      <label class="form-check-label" for="malePopulation">
                         Male Population
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of the population within the Zip Code or submarket, that self-identify themselves as males.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgNet"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgNet">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Female Population" id="femlaePopulation">
+                      <label class="form-check-label check" for="femlaePopulation">
                         Female Population
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -624,19 +654,18 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Median Age Male"
-                        id="communitymedianDis">
-                      <label class="form-check-label check" for="communitymedianDis">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Male"
+                        id="medianMale">
+                      <label class="form-check-label check" for="medianMale">
                         Median Age Male
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the age that is divided form dividing the male population into two numerically equally sized groups; that is, half the people are younger than this age and half are older. Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Female" id="medianFemale">
+                      <label class="form-check-label check" for="medianFemale">
                         Median Age Female
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -644,7 +673,7 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Population in Households"
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Population in Households"
                         id="communityunemployment">
                       <label class="form-check-label check" for="communityunemployment">
                         Population in Households
@@ -653,70 +682,63 @@
                         title="the total number of persons living in the households.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Persons per Households" id="personeHouse">
+                      <label class="form-check-label check" for="personeHouse">
                         Persons per Households
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="a number obtained by dividing the number of people in households by the number of households (or householders). This is people who are physically located in the Zip Code or submarket and who have resided, or are expect to reside, in for one year or more.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Total Households" id="totalHouse">
+                      <label class="form-check-label check" for="totalHouse">
                         Total Households
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of housing units, apartment, mobile homes, or group quarter that is used for or intended to be used for a as separate living quarters.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="One Person Households" id="onePerson">
+                      <label class="form-check-label check" for="onePerson">
                         One Person Households
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of households where one person makes provision for his or her own food or other essentials for living without combining with any other person. Updated quarterly"><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households" id="marriedh">
+                      <label class="form-check-label check" for="marriedh">
                         Married Couple Households
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of households where married couples reside.  Updated quarterly"><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households with children" id="MarriedCoupleChildren">
+                      <label class="form-check-label check" for="MarriedCoupleChildren">
                         Married Couple Households with children
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of households where married couples with children reside.  Updated quarterly"><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households without children" id="MarriedCouple">
+                      <label class="form-check-label check" for="MarriedCouple">
                         Married Couple Households without children
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of households where married couples without children reside.  Updated quarterly"><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgDis"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgDis">
+                    <div class="form-check getCommunity qusSet">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Vehicles Per Household" id="vehiclesHousehold">
+                      <label class="form-check-label check" for="vehiclesHousehold">
                         Vehicles Per Household
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -729,14 +751,14 @@
 
               <!-- Enrollments -->
               <div class="flex-item-left disNone">
-                <div class="dropdown">
-                  <a onclick="footerShow('enroll')" class="dropbtn enroll">
+                <div class="btn-group dropup keep-inside-clicks-open">
+                  <a type="button" class="btn dropdown-toggle enroll" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-plus"></i>
                     <p>Enrollments</p>
                   </a>
-                  <div id="enroll" class="dropdown-content enrollHeight">
+                  <div class="dropdown-menu dropdown-content enrollHeight">
                     <div class="form-check getEnroll qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Total Educated" id="enrollmedian">
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Total Educated" id="enrollmedian">
                       <label class="form-check-label check" for="enrollmedian">
                         Total Educated
                       </label>
@@ -744,29 +766,27 @@
                         title="the total number of all people over the age of 25 including or under nine years old, that have some high school, high school, or some college.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgIncome"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgIncome">
+                    <div class="form-check getEnroll qusSet">
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments Nursery/Preschool" id="enrollNursery">
+                      <label class="form-check-label check" for="enrollNursery">
                         Enrollments Nursery/Preschool
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of children enrolled in programs sponsored by federal, state or local agencies to provide preschool education to young children-- including Head Start programs-- are considered as enrolled in nursery school or preschool.  Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input" type="checkbox" value="" id="medianNet" onclick="return false;">
-                      <label class="form-check-label" for="medianNet">
+                    <div class="form-check getEnroll qusSet">
+                      <input class="enrollCheck form-check-input" type="checkbox" value="Enrollments Kindergarten/Elementary" id="enrollKindergarten">
+                      <label class="form-check-label" for="enrollKindergarten">
                         Enrollments Kindergarten/Elementary
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
                         title="the total number of children enrolled in kindergarten and elementary. Updated quarterly."><i
                           class="fa fa-question-circle"></i></a>
                     </div>
-                    <div class="form-check getValue qusSet">
-                      <input class="form-check-input check" type="checkbox" value="" id="avgNet"
-                        onclick="return false;">
-                      <label class="form-check-label check" for="avgNet">
+                    <div class="form-check getEnroll qusSet">
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments High School" id="enrollHighSchool">
+                      <label class="form-check-label check" for="enrollHighSchool">
                         Enrollments High School
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -774,7 +794,7 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Enrollments College/Graduate/Prof"
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments College/Graduate/Prof"
                         id="enrollmedianDis">
                       <label class="form-check-label check" for="enrollmedianDis">
                         Enrollments College/Graduate/Prof
@@ -784,7 +804,7 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
                         id="enrollunemployment">
                       <label class="form-check-label check" for="enrollunemployment">
                         Enrollments Not Enrolled
@@ -1290,7 +1310,8 @@
           <div class="growInfo" id="growthBox">
             <div class="closeBtn">
               <a onclick="growthHide()"><i class="fa fa-times"></i></a>
-              <span>Growth rate: Last 6 months</span>
+            <!-- <span>Growth Rate: Last 6-MOnths</span> -->
+                <p>Growth Rate: Last <span id="demo">6-Months</span> </p> 
             </div>
             <hr>
             <div class="growthDetail" id="showValue">
@@ -1312,8 +1333,8 @@
         <!-- Boundaries -->
         <div class="boundaries" id="boundaries11">
           <div class="boundaries-item-left">
-            <div class="dropdown">
-              <a onclick="footerShow('bound')" class="innerBound">
+            <div class="btn-group dropup keep-inside-clicks-open">
+              <a type="button" class="dropdown-toggle innerBound" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="boundaries-container">
                   <img src="images/map.png" alt="Snow" style="width:100%;">
                   <div class="bottom-left">
@@ -1321,7 +1342,7 @@
                   </div>
                 </div>
               </a>
-              <div id="bound" class="boundaries-content">
+              <div class="dropdown-menu boundaries-content">
                 <div class="flex-box">
                   <div class="boundaries-text">
                     <span>Selct Geographical <br> Boundaries</span>
@@ -1356,7 +1377,7 @@
   </div>
   <!-- partial -->
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
 

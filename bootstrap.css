@@ -3117,12 +3117,12 @@
     outline:5px auto -webkit-focus-ring-color;
     outline-offset:-2px
    }
-   .btn.focus,
+   /* .btn.focus,
    .btn:focus,
    .btn:hover {
     color:#333;
     text-decoration:none
-   }
+   } */
    .btn.active,
    .btn:active {
     background-image:none;
@@ -3770,7 +3770,7 @@
    .dropup .dropdown-menu,
    .navbar-fixed-bottom .dropdown .dropdown-menu {
     top:auto;
-    bottom:100%;
+    bottom:105px;
     margin-bottom:2px
    }
    @media (min-width:768px) {
