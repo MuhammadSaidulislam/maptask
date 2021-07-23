@@ -69,7 +69,8 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" onclick="growthRadio(event)" type="radio" value="6-Months" id="6month" name="navbar">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 6-Months" id="6month" name="navbar">
               <label class="form-check-label check" for="6month">
                 6-Months
               </label>
@@ -77,7 +78,8 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" onclick="growthRadio(event)" type="radio" value="12-Months" id="12month" name="navbar">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 12-Months" id="12month" name="navbar">
               <label class="form-check-label check" for="12month">
                 12-Months
               </label>
@@ -85,7 +87,8 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input" onclick="growthRadio(event)" type="radio" value="24-Months" id="24month" name="navbar">
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 24-Months" id="24month" name="navbar">
               <label class="form-check-label" for="24month">
                 24-Months
               </label>
@@ -93,7 +96,8 @@
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input" onclick="growthRadio(event)" type="radio" value="36-Months" id="36month" name="navbar">
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 36-Months" id="36month" name="navbar">
               <label class="form-check-label" for="36month">
                 36-Months
               </label>
@@ -133,7 +137,8 @@
           </a>
         </li>
         <li class="inbox dropup keep-inside-clicks-open">
-          <a type="button" class="btn dropdown-toggle btnn" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a type="button" class="btn dropdown-toggle btnn" id="dropdownMenuClickableInside" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-filter">
               <span class="icon-bg"></span>
             </i>
@@ -262,57 +267,19 @@
         <div id="positionSet">
           <div class="centerFooter">
             <div class="flex-container">
-            
+
               <!-- Forecast -->
               <div class="flex-item-left disNone borderOff">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle dropbtn forecast" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle dropbtn forecast" id="dropdownMenuClickableInside"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-file"></i>
                     <p id="ForecastHide">Forecast</p>
                   </a>
                   <div class="dropdown-menu dropdown-content forecastHeight">
-                      <div class="form-check getIndicators qusSet">
-                        <input class="form-check-input check" onClick="toggle(this)" type="radio" value="12-Month Forecast" id="12months"
-                          name="navbar1">
-                        <label class="form-check-label check" for="12months">
-                          12-Month Forecast
-                        </label>
-                        <a data-toggle="tooltip" data-placement="right"
-                          title="our 12-month housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly.">
-                          <i class="fa fa-question-circle"></i></a>
-                      </div>
-                      <div class="form-check getIndicators qusSet">
-                        <input class="form-check-input check" type="radio" value="24-Month Forecast" id="24months"
-                          name="navbar1">
-                        <label class="form-check-label check" for="24months">
-                          24-Month Forecast
-                        </label>
-                        <a data-toggle="tooltip" data-placement="right"
-                          title="our 24-month real housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly."><i
-                            class="fa fa-question-circle"></i></a>
-                      </div>
-                      <div class="form-check getIndicators qusSet">
-                        <input class="form-check-input check" type="radio" value="36-Month Forecast " id="36months"
-                          name="navbar1">
-                        <label class="form-check-label check" for="36months">
-                          36-Month Forecast
-                        </label>
-                        <a data-toggle="tooltip" data-placement="right"
-                          title="our 36-month real housing forecasts are based upon over 5-years data aggregation and testing.  With over 10,000 hours of software development and back-testing.  Resulting in unrivaled forecasting models with an accuracy of over 98% with confidence levels for Zip Codes and submarkets. Updated quarterly."><i
-                            class="fa fa-question-circle"></i></a>
-                      </div>
-                  </div>
-                </div>
-
-                <!-- <div class="dropdown">
-                  <a onclick="footerShow('forecast')" class="dropbtn forecast">
-                    <i class="fa fa-file"></i>
-                    <p id="ForecastHide">Forecast</p>
-                  </a>
-                  <div id="forecast" class="dropdown-content forecastHeight">
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" onClick="toggle(this)" type="radio" value="12-Month Forecast" id="12months"
-                        name="navbar">
+                      <input id="12months" class="form-check-input check" type="radio" value="12-Month Forecast"
+                        onclick="growthRadio(event)" name="navbar">
                       <label class="form-check-label check" for="12months">
                         12-Month Forecast
                       </label>
@@ -321,8 +288,8 @@
                         <i class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="radio" value="24-Month Forecast" id="24months"
-                        name="navbar">
+                      <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                        value="24-Month Forecast" id="24months" name="navbar">
                       <label class="form-check-label check" for="24months">
                         24-Month Forecast
                       </label>
@@ -331,8 +298,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check" type="radio" value="36-Month Forecast " id="36months"
-                        name="navbar">
+                      <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                        value="36-Month Forecast " id="36months" name="navbar">
                       <label class="form-check-label check" for="36months">
                         36-Month Forecast
                       </label>
@@ -341,20 +308,21 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                   </div>
-                </div> -->
-                
-              
+                </div>
+
               </div>
               <!-- Indicators -->
               <div class="flex-item-left disNone">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle dropbtn indicators" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle dropbtn indicators" id="dropdownMenuClickableInside"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-tachometer-alt"></i>
                     <p>Indicators</p>
                   </a>
                   <div class="dropdown-menu dropdown-content indicatorHeight">
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check indoCheck" name="check1" type="checkbox" value="Median Income" id="IndomedianIncome">
+                      <input class="form-check-input check indoCheck" name="check1" type="checkbox"
+                        value="Median Income" id="IndomedianIncome">
                       <label class="form-check-label check" for="IndomedianIncome">
                         Median Income
                       </label>
@@ -363,8 +331,9 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Income" id="avgIncome" name="check1">
-                      <label class="form-check-label check" for="avgIncome">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Income"
+                        id="indoavgIncome" name="check1">
+                      <label class="form-check-label check" for="indoavgIncome">
                         Average Income
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -372,8 +341,9 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input indoCheck" type="checkbox" value="Median Net Worth" id="medianNet" name="check1">
-                      <label class="form-check-label" for="medianNet">
+                      <input class="form-check-input indoCheck" type="checkbox" value="Median Net Worth"
+                        id="indomedianNet" name="check1">
+                      <label class="form-check-label" for="indomedianNet">
                         Median Net Worth
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -391,9 +361,9 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Net Worth" id="avgNet"
-                         name="check1">
-                      <label class="form-check-label check" for="avgNet">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Net Worth"
+                        id="indoavgNet" name="check1">
+                      <label class="form-check-label check" for="indoavgNet">
                         Average Net Worth
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -411,9 +381,9 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getIndicators qusSet">
-                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Disposable Income" id="avgDis"
-                         name="check1">
-                      <label class="form-check-label check" for="avgDis">
+                      <input class="form-check-input check indoCheck" type="checkbox" value="Average Disposable Income"
+                        id="indoavgDis" name="check1">
+                      <label class="form-check-label check" for="indoavgDis">
                         Average Disposable Income
                       </label>
                       <a data-toggle="tooltip" data-placement="right"
@@ -427,7 +397,8 @@
               <!-- Housing -->
               <div class="flex-item-left disNone housingDropdown">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle dropbtn housing" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle dropbtn housing" id="dropdownMenuClickableInside"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-house-user"></i>
                     <p>Housing</p>
                   </a>
@@ -445,7 +416,8 @@
                       </a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Average Home Value" id="avgHome">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Average Home Value"
+                        id="avgHome">
                       <label class="form-check-label check" for="avgHome">
                         Average Home Value
                       </label>
@@ -454,7 +426,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input" type="checkbox" value="Affordability Index" id="affordabilityIndex">
+                      <input class="housingCheck form-check-input" type="checkbox" value="Affordability Index"
+                        id="affordabilityIndex">
                       <label class="form-check-label" for="affordabilityIndex">
                         Affordability Index
                       </label>
@@ -463,7 +436,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Renter Occupied Housing" id="renterHousing">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Renter Occupied Housing"
+                        id="renterHousing">
                       <label class="form-check-label check" for="renterHousing">
                         Renter Occupied Housing
                       </label>
@@ -482,7 +456,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Vacant Housing" id="vacantHousing">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Vacant Housing"
+                        id="vacantHousing">
                       <label class="form-check-label check" for="vacantHousing">
                         Vacant Housing
                       </label>
@@ -501,7 +476,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 1-Bedroom Rentals" id="oneBed">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 1-Bedroom Rentals"
+                        id="oneBed">
                       <label class="form-check-label check" for="oneBed">
                         Total 1-Bedroom Rentals
                       </label>
@@ -510,7 +486,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Group Quarters" id="groupQuarters">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Group Quarters"
+                        id="groupQuarters">
                       <label class="form-check-label check" for="groupQuarters">
                         Group Quarters
                       </label>
@@ -519,7 +496,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 2-Bedroom Rentals" id="twoBed">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 2-Bedroom Rentals"
+                        id="twoBed">
                       <label class="form-check-label check" for="twoBed">
                         Total 2-Bedroom Rentals
                       </label>
@@ -528,7 +506,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 3-Bedroom Rentals" id="threeBed">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total 3-Bedroom Rentals"
+                        id="threeBed">
                       <label class="form-check-label check" for="threeBed">
                         Total 3-Bedroom Rentals
                       </label>
@@ -537,7 +516,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getHousing qusSet">
-                      <input class="housingCheck form-check-input check" type="checkbox" value="Total Studio Rentals" id="totalStudio">
+                      <input class="housingCheck form-check-input check" type="checkbox" value="Total Studio Rentals"
+                        id="totalStudio">
                       <label class="form-check-label check" for="totalStudio">
                         Total Studio Rentals
                       </label>
@@ -552,13 +532,15 @@
               <!-- Risk -->
               <div class="flex-item-left disNone">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle risk" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle risk" id="dropdownMenuClickableInside" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-exclamation-triangle"></i>
                     <p>Risk</p>
                   </a>
                   <div class="dropdown-menu dropdown-content riskHeight">
                     <div class="form-check getRisk qusSet">
-                      <input class="riskCheck form-check-input check" type="checkbox" value="Total In Poverty" id="riskmedian">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Total In Poverty"
+                        id="riskmedian">
                       <label class="form-check-label check" for="riskmedian">
                         Total In Poverty
                       </label>
@@ -567,7 +549,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getRisk qusSet">
-                      <input class="riskCheck form-check-input check" type="checkbox" value="Crime Index" id="crimeIndex">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Crime Index"
+                        id="crimeIndex">
                       <label class="form-check-label check" for="crimeIndex">
                         Crime Index
                       </label>
@@ -586,7 +569,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getRisk qusSet">
-                      <input class="riskCheck form-check-input check" type="checkbox" value="Number of Jobs" id="numberJobs">
+                      <input class="riskCheck form-check-input check" type="checkbox" value="Number of Jobs"
+                        id="numberJobs">
                       <label class="form-check-label check" for="numberJobs">
                         Number of Jobs
                       </label>
@@ -610,14 +594,16 @@
               <!-- Community -->
               <div class="flex-item-left disNone communityDropdown">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle community" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle community" id="dropdownMenuClickableInside"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-users"></i>
                     <p>Community</p>
                   </a>
                   <div class="dropdown-menu dropdown-content communityHeight">
                     <div class="commbottomBox"></div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Population" id="populationMedian">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Population"
+                        id="populationMedian">
                       <label class="form-check-label check" for="populationMedian">
                         Population
                       </label>
@@ -626,7 +612,8 @@
                         <i class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Migration" id="migration1">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Migration"
+                        id="migration1">
                       <label class="form-check-label check" for="migration1">
                         Migration
                       </label>
@@ -636,7 +623,8 @@
 
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input" type="checkbox" value="Male Population" id="malePopulation">
+                      <input class="communityCheck form-check-input" type="checkbox" value="Male Population"
+                        id="malePopulation">
                       <label class="form-check-label" for="malePopulation">
                         Male Population
                       </label>
@@ -645,7 +633,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Female Population" id="femlaePopulation">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Female Population"
+                        id="femlaePopulation">
                       <label class="form-check-label check" for="femlaePopulation">
                         Female Population
                       </label>
@@ -664,7 +653,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Female" id="medianFemale">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Female"
+                        id="medianFemale">
                       <label class="form-check-label check" for="medianFemale">
                         Median Age Female
                       </label>
@@ -673,8 +663,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Population in Households"
-                        id="communityunemployment">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Population in Households" id="communityunemployment">
                       <label class="form-check-label check" for="communityunemployment">
                         Population in Households
                       </label>
@@ -683,7 +673,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Persons per Households" id="personeHouse">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Persons per Households" id="personeHouse">
                       <label class="form-check-label check" for="personeHouse">
                         Persons per Households
                       </label>
@@ -692,7 +683,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Total Households" id="totalHouse">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="Total Households"
+                        id="totalHouse">
                       <label class="form-check-label check" for="totalHouse">
                         Total Households
                       </label>
@@ -701,7 +693,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="One Person Households" id="onePerson">
+                      <input class="communityCheck form-check-input check" type="checkbox" value="One Person Households"
+                        id="onePerson">
                       <label class="form-check-label check" for="onePerson">
                         One Person Households
                       </label>
@@ -710,7 +703,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households" id="marriedh">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Married Couple Households" id="marriedh">
                       <label class="form-check-label check" for="marriedh">
                         Married Couple Households
                       </label>
@@ -719,7 +713,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households with children" id="MarriedCoupleChildren">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Married Couple Households with children" id="MarriedCoupleChildren">
                       <label class="form-check-label check" for="MarriedCoupleChildren">
                         Married Couple Households with children
                       </label>
@@ -728,7 +723,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Married Couple Households without children" id="MarriedCouple">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Married Couple Households without children" id="MarriedCouple">
                       <label class="form-check-label check" for="MarriedCouple">
                         Married Couple Households without children
                       </label>
@@ -737,7 +733,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getCommunity qusSet">
-                      <input class="communityCheck form-check-input check" type="checkbox" value="Vehicles Per Household" id="vehiclesHousehold">
+                      <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Vehicles Per Household" id="vehiclesHousehold">
                       <label class="form-check-label check" for="vehiclesHousehold">
                         Vehicles Per Household
                       </label>
@@ -752,13 +749,15 @@
               <!-- Enrollments -->
               <div class="flex-item-left disNone">
                 <div class="btn-group dropup keep-inside-clicks-open">
-                  <a type="button" class="btn dropdown-toggle enroll" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="button" class="dropdown-toggle enroll" id="dropdownMenuClickableInside"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user-plus"></i>
                     <p>Enrollments</p>
                   </a>
                   <div class="dropdown-menu dropdown-content enrollHeight">
                     <div class="form-check getEnroll qusSet">
-                      <input class="enrollCheck form-check-input check" type="checkbox" value="Total Educated" id="enrollmedian">
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Total Educated"
+                        id="enrollmedian">
                       <label class="form-check-label check" for="enrollmedian">
                         Total Educated
                       </label>
@@ -767,7 +766,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments Nursery/Preschool" id="enrollNursery">
+                      <input class="enrollCheck form-check-input check" type="checkbox"
+                        value="Enrollments Nursery/Preschool" id="enrollNursery">
                       <label class="form-check-label check" for="enrollNursery">
                         Enrollments Nursery/Preschool
                       </label>
@@ -776,7 +776,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="enrollCheck form-check-input" type="checkbox" value="Enrollments Kindergarten/Elementary" id="enrollKindergarten">
+                      <input class="enrollCheck form-check-input" type="checkbox"
+                        value="Enrollments Kindergarten/Elementary" id="enrollKindergarten">
                       <label class="form-check-label" for="enrollKindergarten">
                         Enrollments Kindergarten/Elementary
                       </label>
@@ -785,7 +786,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments High School" id="enrollHighSchool">
+                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments High School"
+                        id="enrollHighSchool">
                       <label class="form-check-label check" for="enrollHighSchool">
                         Enrollments High School
                       </label>
@@ -794,8 +796,8 @@
                           class="fa fa-question-circle"></i></a>
                     </div>
                     <div class="form-check getEnroll qusSet">
-                      <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments College/Graduate/Prof"
-                        id="enrollmedianDis">
+                      <input class="enrollCheck form-check-input check" type="checkbox"
+                        value="Enrollments College/Graduate/Prof" id="enrollmedianDis">
                       <label class="form-check-label check" for="enrollmedianDis">
                         Enrollments College/Graduate/Prof
                       </label>
@@ -822,7 +824,7 @@
               <div class="mobile-flex borderOff">
                 <!-- Sidebar -->
                 <div class="dropdown">
-                  <a onclick="footerShow('sidebar')" class="dropbtn forecast">
+                  <a onclick="footerShow2('sidebar')" class="dropbtn forecast">
                     <p id="ForecastHide"><i style="color: #099D20;" class="fa fa-bars"></i> Sidebar</p>
                   </a>
                   <div id="sidebar" class="mobile-content mobilesidebar">
@@ -874,7 +876,7 @@
                 </div>
                 <!-- Map Layer -->
                 <div class="dropdown">
-                  <a onclick="footerShow('mobile')" class="dropbtn forecast">
+                  <a onclick="footerShow2('mobile')" class="dropbtn forecast">
                     <p id="ForecastHide"><i class="fa fa-layer-group"></i> Map Layers</p>
                   </a>
                   <div id="mobile" class="mobile-content mobileHeight">
@@ -889,26 +891,26 @@
                           </a>
                           <div id="forecast1" class="mobile-dropdown forecastHeight">
                             <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="radio" value="12-Month Forecast"
-                                id="M12months" name="navbar">
+                              <input id="M12months" class="form-check-input check" type="radio"
+                                value="12-Month Forecast" onclick="growthRadio(event)" name="navbar">
                               <label class="form-check-label check" for="M12months">
                                 12-Month Forecast
                               </label>
                             </div>
                             <hr>
                             <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="radio" value="24-Month Forecast"
-                                id="M24months" name="navbar">
+                              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                                value="24-Month Forecast" id="M24months" name="navbar">
                               <label class="form-check-label check" for="M24months">
                                 24-Month Forecast
                               </label>
                             </div>
                             <hr>
                             <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="radio" value="36-Month Forecast "
-                                id="M36months" name="navbar">
+                              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                                value="36-Month Forecast " id="M36months" name="navbar">
                               <label class="form-check-label check" for="M36months">
-                                Married Couple Households without children
+                                36-Month Forecast
                               </label>
                             </div>
 
@@ -925,53 +927,53 @@
                           </a>
                           <div id="indicators1" class="mobile-dropdown mobileHeight">
 
-                            <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Median Income"
-                                id="MIndomedian">
-                              <label class="form-check-label check" for="MIndomedian">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" name="check1" type="checkbox"
+                                value="Median Income" id="MIndomedianIncome">
+                              <label class="form-check-label check" for="MIndomedianIncome">
                                 Median Income
                               </label>
                             </div>
-                            <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgIncome">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" type="checkbox" value="Average Income"
+                                id="MindoavgIncome" name="check1">
+                              <label class="form-check-label check" for="MindoavgIncome">
                                 Average Income
                               </label>
                             </div>
-                            <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
-                                onclick="return false;">
-                              <label class="form-check-label" for="MmedianNet">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input indoCheck" type="checkbox" value="Median Net Worth"
+                                id="MindomedianNet" name="check1">
+                              <label class="form-check-label" for="MindomedianNet">
                                 Median Net Worth
                               </label>
                             </div>
-                            <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgNet">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" type="checkbox" value="Unemployment Rate"
+                                id="MIndounemployment" name="check1">
+                              <label class="form-check-label check" for="MIndounemployment">
+                                Unemployment Rate
+                              </label>
+                            </div>
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" type="checkbox" value="Average Net Worth"
+                                id="MindoavgNet" name="check1">
+                              <label class="form-check-label check" for="MindoavgNet">
                                 Average Net Worth
                               </label>
                             </div>
-                            <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Median Disposable Income"
-                                id="MIndomedianDis">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" type="checkbox"
+                                value="Median Disposable Income" id="MIndomedianDis" name="check1">
                               <label class="form-check-label check" for="MIndomedianDis">
                                 Median Disposable Income
                               </label>
                             </div>
-                            <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
+                            <div class="form-check getIndicatorss qusSet mobileSet">
+                              <input class="form-check-input check indoCheck" type="checkbox"
+                                value="Average Disposable Income" id="MindoavgDis" name="check1">
+                              <label class="form-check-label check" for="MindoavgDis">
                                 Average Disposable Income
-                              </label>
-                            </div>
-                            <div class="form-check getIndicators qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Unemployment Rate"
-                                id="MIndounemployment">
-                              <label class="form-check-label check" for="MIndounemployment">
-                                Unemployment Rate
                               </label>
                             </div>
 
@@ -987,38 +989,38 @@
                           </a>
                           <div id="risk1" class="mobile-dropdown riskHeight">
                             <div class="form-check getRisk qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Total In Poverty"
-                                id="Mriskmedian">
-                              <label class="form-check-label check" for="Mriskmedian">
-                                Total In Poverty
-                              </label>
+                              <input class="riskCheck form-check-input check" type="checkbox" value="Total In Poverty"
+                              id="Mriskmedian">
+                            <label class="form-check-label check" for="Mriskmedian">
+                              Total In Poverty
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgIncome">
-                                Crime Index
-                              </label>
+                              <input class="riskCheck form-check-input check" type="checkbox" value="Crime Index"
+                              id="McrimeIndex">
+                            <label class="form-check-label check" for="McrimeIndex">
+                              Crime Index
+                            </label>
                             </div>
                             <div class="form-check getRisk qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Number of Businesses"
-                                id="Mriskunemployment">
-                              <label class="form-check-label check" for="Mriskunemployment">
-                                Number of Businesses
-                              </label>
+                              <input class="riskCheck form-check-input check" type="checkbox" value="Number of Businesses"
+                              id="MnumberfoBusiness">
+                            <label class="form-check-label check" for="MnumberfoBusiness">
+                              Number of Businesses
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgNet">
-                                Number of Jobs
-                              </label>
+                              <input class="riskCheck form-check-input check" type="checkbox" value="Number of Jobs"
+                              id="MnumberJobs">
+                            <label class="form-check-label check" for="MnumberJobs">
+                              Number of Jobs
+                            </label>
                             </div>
                             <div class="form-check getRisk qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="GDP" id="MriskmedianDis">
-                              <label class="form-check-label check" for="MriskmedianDis">
-                                GDP
-                              </label>
+                              <input class="riskCheck form-check-input check" type="checkbox" value="GDP" id="MGDP">
+                      <label class="form-check-label check" for="MGDP">
+                        GDP
+                      </label>
                             </div>
                           </div>
                         </div>
@@ -1032,46 +1034,46 @@
                           </a>
                           <div id="enroll1" class="mobile-dropdown enrollHeight">
                             <div class="form-check getEnroll qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Total Educated"
-                                id="Menrollmedian">
-                              <label class="form-check-label check" for="Menrollmedian">
-                                Total Educated
-                              </label>
+                              <input class="enrollCheck form-check-input check" type="checkbox" value="Total Educated"
+                              id="Menrollmedian">
+                            <label class="form-check-label check" for="Menrollmedian">
+                              Total Educated
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgIncome">
-                                Enrollments Nursery/Preschool
-                              </label>
+                              <input class="enrollCheck form-check-input check" type="checkbox"
+                              value="Enrollments Nursery/Preschool" id="MenrollNursery">
+                            <label class="form-check-label check" for="MenrollNursery">
+                              Enrollments Nursery/Preschool
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
-                                onclick="return false;">
-                              <label class="form-check-label" for="MmedianNet">
-                                Enrollments Kindergarten/Elementary
-                              </label>
+                              <input class="enrollCheck form-check-input" type="checkbox"
+                        value="Enrollments Kindergarten/Elementary" id="MenrollKindergarten">
+                      <label class="form-check-label" for="MenrollKindergarten">
+                        Enrollments Kindergarten/Elementary
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgNet">
-                                Enrollments High School
-                              </label>
+                              <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments High School"
+                              id="MenrollHighSchool">
+                            <label class="form-check-label check" for="MenrollHighSchool">
+                              Enrollments High School
+                            </label>
                             </div>
                             <div class="form-check getEnroll qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox"
-                                value="Enrollments College/Graduate/Prof" id="MenrollmedianDis">
-                              <label class="form-check-label check" for="MenrollmedianDis">
-                                Enrollments College/Graduate/Prof
-                              </label>
+                              <input class="enrollCheck form-check-input check" type="checkbox"
+                              value="Enrollments College/Graduate/Prof" id="MenrollmedianDis">
+                            <label class="form-check-label check" for="MenrollmedianDis">
+                              Enrollments College/Graduate/Prof
+                            </label>
                             </div>
                             <div class="form-check getEnroll qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
-                                id="Menrollunemployment">
-                              <label class="form-check-label check" for="Menrollunemployment">
-                                Enrollments Not Enrolled
-                              </label>
+                              <input class="enrollCheck form-check-input check" type="checkbox" value="Enrollments Not Enrolled"
+                              id="Menrollunemployment">
+                            <label class="form-check-label check" for="Menrollunemployment">
+                              Enrollments Not Enrolled
+                            </label>
                             </div>
                           </div>
                         </div>
@@ -1086,88 +1088,89 @@
                           <div id="housing1" class="mobile-dropdown">
 
                             <div class="form-check getHousing qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Median Home Value"
-                                id="Mhousingmedian">
-                              <label class="form-check-label check" for="Mhousingmedian">
-                                Median Home Value
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Median Home Value"
+                        id="MmedianHome">
+                      <label class="form-check-label check" for="MmedianHome">
+                        Median Home Value
+                      </label>
+                            
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgIncome">
-                                Average Home Value
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Average Home Value"
+                              id="MavgHome">
+                            <label class="form-check-label check" for="MavgHome">
+                              Average Home Value
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
-                                onclick="return false;">
-                              <label class="form-check-label" for="MmedianNet">
-                                Affordability Index
-                              </label>
+                              <input class="housingCheck form-check-input" type="checkbox" value="Affordability Index"
+                        id="MaffordabilityIndex">
+                      <label class="form-check-label" for="MaffordabilityIndex">
+                        Affordability Index
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgNet">
-                                Renter Occupied Housing
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Renter Occupied Housing"
+                              id="MrenterHousing">
+                            <label class="form-check-label check" for="MrenterHousing">
+                              Renter Occupied Housing
+                            </label>
                             </div>
                             <div class="form-check getHousing qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Owner Occupied Housing"
-                                id="MhousingmedianDis">
-                              <label class="form-check-label check" for="MhousingmedianDis">
-                                Owner Occupied Housing
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Renter Occupied Housing"
+                              id="MrenterHousing">
+                            <label class="form-check-label check" for="MrenterHousing">
+                              Renter Occupied Housing
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Vacant Housing
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Vacant Housing"
+                        id="MvacantHousing">
+                      <label class="form-check-label check" for="MvacantHousing">
+                        Vacant Housing
+                      </label>
                             </div>
                             <div class="form-check getHousing qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Vacancy Rate"
-                                id="Mhousingunemployment">
-                              <label class="form-check-label check" for="Mhousingunemployment">
-                                Vacancy Rate
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Vacancy Rate"
+                        id="MvacancyRate">
+                      <label class="form-check-label check" for="MvacancyRate">
+                        Vacancy Rate
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Total 1-Bedroom Rentals
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Total 1-Bedroom Rentals"
+                        id="MoneBed">
+                      <label class="form-check-label check" for="MoneBed">
+                        Total 1-Bedroom Rentals
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Total 2-Bedroom Rentals
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Group Quarters"
+                              id="MgroupQuarters">
+                            <label class="form-check-label check" for="MgroupQuarters">
+                              Group Quarters
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Total 3-Bedroom Rentals
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Group Quarters"
+                        id="MgroupQuarters">
+                      <label class="form-check-label check" for="MgroupQuarters">
+                        Group Quarters
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Total Studio Rentals
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Total 3-Bedroom Rentals"
+                              id="MthreeBed">
+                            <label class="form-check-label check" for="MthreeBed">
+                              Total 3-Bedroom Rentals
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Group Quarters
-                              </label>
+                              <input class="housingCheck form-check-input check" type="checkbox" value="Total Studio Rentals"
+                              id="MtotalStudio">
+                            <label class="form-check-label check" for="MtotalStudio">
+                              Total Studio Rentals
+                            </label>
                             </div>
                           </div>
                         </div>
@@ -1182,102 +1185,102 @@
                           </a>
                           <div id="community1" class="mobile-dropdown">
                             <div class="form-check getCommunity qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Population"
-                                id="Mcommunitymedian">
-                              <label class="form-check-label check" for="Mcommunitymedian">
-                                Population
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Population"
+                              id="MpopulationMedian">
+                            <label class="form-check-label check" for="MpopulationMedian">
+                              Population
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgIncome"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgIncome">
-                                Migration
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Migration"
+                              id="migration1">
+                            <label class="form-check-label check" for="Mmigration1">
+                              Migration
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input" type="checkbox" value="" id="MmedianNet"
-                                onclick="return false;">
-                              <label class="form-check-label" for="MmedianNet">
-                                Male Population
-                              </label>
+                              <input class="communityCheck form-check-input" type="checkbox" value="Male Population"
+                              id="MmalePopulation">
+                            <label class="form-check-label" for="MmalePopulation">
+                              Male Population
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgNet"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgNet">
-                                Female Population
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Female Population"
+                        id="MfemlaePopulation">
+                      <label class="form-check-label check" for="MfemlaePopulation">
+                        Female Population
+                      </label>
                             </div>
                             <div class="form-check getCommunity qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Median Age Male"
-                                id="McommunitymedianDis">
-                              <label class="form-check-label check" for="McommunitymedianDis">
-                                Median Age Male
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Male"
+                        id="MmedianMale">
+                      <label class="form-check-label check" for="MmedianMale">
+                        Median Age Male
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Median Age Female
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Median Age Female"
+                        id="MmedianFemale">
+                      <label class="form-check-label check" for="MmedianFemale">
+                        Median Age Female
+                      </label>
                             </div>
                             <div class="form-check getCommunity qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="Population in Households"
-                                id="Mcommunityunemployment">
-                              <label class="form-check-label check" for="Mcommunityunemployment">
-                                Population in Households
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                              value="Population in Households" id="Mcommunityunemployment">
+                            <label class="form-check-label check" for="Mcommunityunemployment">
+                              Population in Households
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Persons per Households
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                              value="Persons per Households" id="MpersoneHouse">
+                            <label class="form-check-label check" for="MpersoneHouse">
+                              Persons per Households
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Total Households
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="Total Households"
+                        id="MtotalHouse">
+                      <label class="form-check-label check" for="MtotalHouse">
+                        Total Households
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                One Person Households
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox" value="One Person Households"
+                              id="MonePerson">
+                            <label class="form-check-label check" for="MonePerson">
+                              One Person Households
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Married Couple Households
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                              value="Married Couple Households" id="marriedh">
+                            <label class="form-check-label check" for="marriedh">
+                              Married Couple Households
+                            </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Married Couple Households with children
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Married Couple Households with children" id="MMarriedCoupleChildren">
+                      <label class="form-check-label check" for="MMarriedCoupleChildren">
+                        Married Couple Households with children
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Married Couple Households without children
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                        value="Married Couple Households without children" id="MMarriedCouple">
+                      <label class="form-check-label check" for="MMarriedCouple">
+                        Married Couple Households without children
+                      </label>
                             </div>
                             <div class="form-check getValue qusSet mobileSet">
-                              <input class="form-check-input check" type="checkbox" value="" id="MavgDis"
-                                onclick="return false;">
-                              <label class="form-check-label check" for="MavgDis">
-                                Vehicles Per Household
-                              </label>
+                              <input class="communityCheck form-check-input check" type="checkbox"
+                              value="Vehicles Per Household" id="MvehiclesHousehold">
+                            <label class="form-check-label check" for="MvehiclesHousehold">
+                              Vehicles Per Household
+                            </label>
                             </div>
                           </div>
                         </div>
@@ -1310,8 +1313,8 @@
           <div class="growInfo" id="growthBox">
             <div class="closeBtn">
               <a onclick="growthHide()"><i class="fa fa-times"></i></a>
-            <!-- <span>Growth Rate: Last 6-MOnths</span> -->
-                <p>Growth Rate: Last <span id="demo">6-Months</span> </p> 
+              <!-- <span>Growth Rate: Last 6-MOnths</span> -->
+              <p id="demo">Growth Rate: Last 6-Months</p>
             </div>
             <hr>
             <div class="growthDetail" id="showValue">
@@ -1331,10 +1334,11 @@
         </div>
 
         <!-- Boundaries -->
-        <div class="boundaries" id="boundaries11">
+        <div class="boundaries" id="boundMobile">
           <div class="boundaries-item-left">
             <div class="btn-group dropup keep-inside-clicks-open">
-              <a type="button" class="dropdown-toggle innerBound" id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a onclick="footerShow2('boundMobile')" type="button" class="dropdown-toggle innerBound"
+                id="dropdownMenuClickableInside" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="boundaries-container">
                   <img src="images/map.png" alt="Snow" style="width:100%;">
                   <div class="bottom-left">
@@ -1383,6 +1387,74 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
+
+  <script>
+    $(document).on('click.bs.dropup.data-api', '.dropup.keep-inside-clicks-open', function (e) {
+      e.stopPropagation();
+    });
+
+    document.getElementById('12months').onclick = function () {
+      var checkboxes = document.getElementsByName('check1');
+      for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+      }
+
+      document.getElementById('IndomedianIncome').disabled = true;
+      document.getElementById('indoavgIncome').disabled = true;
+      document.getElementById('indomedianNet').disabled = true;
+      document.getElementById('Indounemployment').disabled = true;
+      document.getElementById('indoavgNet').disabled = true;
+      document.getElementById('IndomedianDis').disabled = true;
+      document.getElementById('indoavgDis').disabled = true;
+
+    }
+    document.getElementById('24months').onclick = function () {
+      var checkboxes = document.getElementsByName('check1');
+      for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+      }
+
+      document.getElementById('IndomedianIncome').disabled = true;
+      document.getElementById('indoavgIncome').disabled = true;
+      document.getElementById('indomedianNet').disabled = true;
+      document.getElementById('Indounemployment').disabled = true;
+      document.getElementById('indoavgNet').disabled = true;
+      document.getElementById('IndomedianDis').disabled = true;
+      document.getElementById('indoavgDis').disabled = true;
+
+    }
+
+    document.getElementById('M12months').onclick = function () {
+      var checkboxes = document.getElementsByName('check1');
+      for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+      }
+      document.getElementById('MIndomedianIncome').disabled = true;
+      document.getElementById('MindoavgIncome').disabled = true;
+      document.getElementById('MindomedianNet').disabled = true;
+      document.getElementById('MIndounemployment').disabled = true;
+      document.getElementById('MindoavgNet').disabled = true;
+      document.getElementById('MIndomedianDis').disabled = true;
+      document.getElementById('MindoavgDis').disabled = true;
+
+    }
+
+    document.getElementById('M24months').onclick = function () {
+      var checkboxes = document.getElementsByName('check1');
+      for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+      }
+      document.getElementById('MIndomedianIncome').disabled = true;
+      document.getElementById('MindoavgIncome').disabled = true;
+      document.getElementById('MindomedianNet').disabled = true;
+      document.getElementById('MIndounemployment').disabled = true;
+      document.getElementById('MindoavgNet').disabled = true;
+      document.getElementById('MIndomedianDis').disabled = true;
+      document.getElementById('MindoavgDis').disabled = true;
+
+    }
+
+  </script>
 
 
 

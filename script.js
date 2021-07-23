@@ -28,6 +28,13 @@ $('input.housingCheck').on('click', function (evt) {
   }
 });
 
+var indilimit = 3;
+$('input.indoCheck').on('click', function (evt) {
+  if ($('.indoCheck:checked').length > indilimit) {
+    this.checked = false;
+  }
+});
+
 
 
 function grwothInfo() {
@@ -71,11 +78,9 @@ $(document).ready(function () {
     }).get();
 
     $('#showValue').html(value_array.join());
-    console.log(value_array.join());
     document.getElementById("showValue").innerHTML = '';
     for (let i = 0; i < value_array.length; i++) {
       document.getElementById("showValue").innerHTML += `<p>${value_array[i]}</p>`;
-      console.log(value_array[i]);
     }
   });
 });
@@ -91,11 +96,9 @@ $(document).ready(function () {
     }).get();
 
     $('#showValue').html(value_array.join());
-    console.log(value_array.join());
     document.getElementById("showValue").innerHTML = '';
     for (let i = 0; i < value_array.length; i++) {
       document.getElementById("showValue").innerHTML += `<p>${value_array[i]}</p>`;
-      console.log(value_array[i]);
     }
   });
 });
@@ -110,11 +113,9 @@ $(document).ready(function () {
     }).get();
 
     $('#showValue').html(value_array.join());
-    console.log(value_array.join());
     document.getElementById("showValue").innerHTML = '';
     for (let i = 0; i < value_array.length; i++) {
       document.getElementById("showValue").innerHTML += `<p>${value_array[i]}</p>`;
-      console.log(value_array[i]);
     }
   });
 });
@@ -129,11 +130,9 @@ $(document).ready(function () {
     }).get();
 
     $('#showValue').html(value_array.join());
-    console.log(value_array.join());
     document.getElementById("showValue").innerHTML = '';
     for (let i = 0; i < value_array.length; i++) {
       document.getElementById("showValue").innerHTML += `<p>${value_array[i]}</p>`;
-      console.log(value_array[i]);
     }
   });
 });
@@ -147,13 +146,10 @@ $(document).ready(function () {
     var value_array = $('.getEnroll input').filter(':checked').map(function () {
       return this.value;
     }).get();
-
     $('#showValue').html(value_array.join());
-    console.log(value_array.join());
     document.getElementById("showValue").innerHTML = '';
     for (let i = 0; i < value_array.length; i++) {
       document.getElementById("showValue").innerHTML += `<p>${value_array[i]}</p>`;
-      console.log(value_array[i]);
     }
   });
 });
@@ -260,7 +256,7 @@ var myChart = new Chart(ctx1, {
 
 // Bottom Navbar opup
 function footerShow(id) {
-  let allid = ['forecast', 'indicators', 'housing', 'community', 'enroll', 'risk', 'mobile', 'sidebar', 'bound', 'filterBox']
+  let allid = ['forecast', 'indicators', 'housing', 'community', 'enroll', 'risk', 'filterBox']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -272,7 +268,7 @@ function footerShow(id) {
 
 
 function footerShow1(id) {
-  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1']
+  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1', 'bound','boundaries11']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -280,6 +276,18 @@ function footerShow1(id) {
     }
   }
 }
+
+function footerShow2(id) {
+  let allid = [ 'mobile', 'sidebar','boundMobile']
+  document.getElementById(id).classList.toggle("show");
+  for (let i = 0; i < allid.length; i++) {
+    if (allid[i] !== id) {
+      document.getElementById(allid[i]).classList.remove("show");
+    }
+  }
+}
+
+
 
 
 // boundaries function
@@ -296,14 +304,18 @@ function filterShow1() {
 }
 
 
-// checkbox uncheck after refresh
-// $(document).ready(function () {
-//   $(':checkbox:checked').prop('checked', false);
-// });
 
 
-var radios = document.querySelectorAll('input[type="radio"]:checked');
-var value = radios.length > 0 ? radios[0].value : null;
+//checkbox uncheck after refresh
+
+
+$(document).ready(function () {
+  $(':checkbox:checked').prop('checked', false);
+});
+
+
+// var radios = document.querySelectorAll('input[type="radio"]:checked');
+// var value = radios.length > 0 ? radios[0].value : null;
 
 
 
@@ -361,22 +373,23 @@ function growthRadio(event) {
   document.getElementById("demo").innerText = event.target.value;
 }
 
-function toggle(source) {
-  checkboxes = document.getElementsByName('check1');
-  for (var i = 0, n = checkboxes.length; i < n; i++) {
-    checkboxes[i].checked = source.checked;
-
-  }
-}
-
-
-
+// function toggle(source) {
+//   checkboxes = document.getElementsByName('check1');
+//   document.getElementById('IndomedianIncome').readOnly = true; 
+//   for (var i = 0, n = checkboxes.length; i < n; i++) {
+//     checkboxes[i].checked = source.checked;
+//     console.log('saidul'+source.checked);
+//   }
+// }
 
 
 
-$(document).on('click.bs.dropup.data-api', '.dropup.keep-inside-clicks-open', function (e) {
-  e.stopPropagation();
-});
+
+
+
+
+
+
 
 
 

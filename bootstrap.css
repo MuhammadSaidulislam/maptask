@@ -2765,19 +2765,22 @@
    input[type=checkbox][disabled],
    input[type=radio].disabled,
    input[type=radio][disabled] {
-    cursor:not-allowed
+    cursor:not-allowed;
+  
    }
    .checkbox-inline.disabled,
    .radio-inline.disabled,
    fieldset[disabled] .checkbox-inline,
    fieldset[disabled] .radio-inline {
-    cursor:not-allowed
+    cursor:not-allowed;
+    background: red !important;
    }
    .checkbox.disabled label,
    .radio.disabled label,
    fieldset[disabled] .checkbox label,
    fieldset[disabled] .radio label {
-    cursor:not-allowed
+    cursor:not-allowed;
+    background: red !important;
    }
    .form-control-static {
     min-height:34px;
