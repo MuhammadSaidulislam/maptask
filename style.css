@@ -1310,7 +1310,7 @@ z-index: 1000000;
 .forecastHeight {
     height: auto;
     width: 172px;
-    left: -46px;
+    left: -65px;
 }
 
 .mobileHeight {
@@ -1322,13 +1322,13 @@ z-index: 1000000;
 .indicatorHeight {
     height: auto;
     width: 224px;
-    left: -76px;
+    left: -88px;
 }
 
 .housingHeight {
     /* height: auto; */
      width: 224px;
-    left: -75px;
+    left: -94px;
     height: 200px;
     overflow-y: auto; 
 }
@@ -1338,7 +1338,7 @@ z-index: 1000000;
     height: 20px;
     /* background-color: #951414; */
     position: fixed;
-    bottom: 90px;
+    bottom: 76px;
     margin-left: 107px;
     border-top: 17px solid #000000b4;
     border-left: 10px solid transparent;
@@ -1351,7 +1351,7 @@ z-index: 1000000;
     height: 20px;
     /* background-color: #951414; */
     position: fixed;
-    bottom: 90px;
+    bottom: 76px;
     margin-left: 160px;
     border-top: 17px solid #000000b4;
     border-left: 10px solid transparent;
@@ -1362,20 +1362,20 @@ z-index: 1000000;
 .riskHeight {
     height: auto;
     width: 224px;
-    left: -75px;
+    left: -94px;
 }
 
 .enrollHeight {
     height: auto;
     width: 279px;
-    left: -103px;
+    left: -110px;
 }
 
 .communityHeight {
     /* height: auto; */
     width: 333px;
     /* overflow-y: auto;  */
-    left: -128px;
+    left: -136px;
     height: 200px;
     overflow-y: auto;
 }
@@ -1686,7 +1686,7 @@ transform: translate(-50%,0); */
 
 
 
-@media(max-width:1046px) {
+@media(max-width:1176px) {
 
     .navbar-default .navbar-collapse,
     .navbar-default .navbar-form {
@@ -1823,7 +1823,7 @@ text-align: center;
     color: #fff;
 }
 
-@media screen and (min-width: 1046px) {
+@media screen and (min-width: 1176px) {
 
     #searchBox {
         width: 19%;
@@ -1831,7 +1831,7 @@ text-align: center;
 
     .navBox {
         width: 64%;
-        padding-left: 10px;
+        padding-left: 7px;
     }
 
     .navbar-nav>li {
@@ -1840,7 +1840,7 @@ text-align: center;
 
 }
 
-@media screen and (min-width: 1277px) {
+/* @media screen and (min-width: 1277px) {
 
     #searchBox {
         width: 30%;
@@ -1850,7 +1850,7 @@ text-align: center;
         width: 57%;
         padding-left: 10px;
     }
-}
+} */
 
 
 

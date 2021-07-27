@@ -371,6 +371,18 @@ list.addEventListener('mouseenter', function (ev) {
 // Growth rate show
 function growthRadio(event) {
   document.getElementById("demo").innerText = event.target.value;
+  document.getElementById("demo1").innerText = event.target.value;
+  document.getElementById("showValue").innerHTML = "";
+
+  var checkboxes = document.getElementsByName('check1');
+      for (var checkbox of checkboxes) {
+        checkbox.checked = this.unchecked;
+      }
+  let indoCheckId = ['IndomedianIncome', 'indoavgIncome', 'indomedianNet', 'Indounemployment', 'indoavgNet', 'IndomedianDis', 'indoavgDis']
+      for (let i = 0; i <= indoCheckId.length; i++) {
+        document.getElementById(indoCheckId[i]).disabled = false;
+      }
+
 }
 
 // function toggle(source) {
