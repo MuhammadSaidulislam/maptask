@@ -1316,7 +1316,7 @@ z-index: 1000000;
 .mobileHeight {
     height: auto;
     width: 110px;
-    left: -46px;
+    left: -14px;
 }
 
 .indicatorHeight {
@@ -1329,7 +1329,7 @@ z-index: 1000000;
     /* height: auto; */
      width: 224px;
     left: -94px;
-    height: 200px;
+    height: 215px;
     overflow-y: auto; 
 }
 
@@ -1351,7 +1351,7 @@ z-index: 1000000;
     height: 20px;
     /* background-color: #951414; */
     position: fixed;
-    bottom: 76px;
+    bottom: 77px;
     margin-left: 160px;
     border-top: 17px solid #000000b4;
     border-left: 10px solid transparent;
@@ -1376,7 +1376,7 @@ z-index: 1000000;
     width: 333px;
     /* overflow-y: auto;  */
     left: -136px;
-    height: 200px;
+    height: 215px;
     overflow-y: auto;
 }
 
@@ -1464,7 +1464,7 @@ display: block;
 .dropdown-content .form-check label {
     font-size: 11px;
     letter-spacing: 0px;
-    line-height: 5px;
+    /* line-height: 5px; */
     font-weight: 600;
     color: #fff;
     margin: 5px 8px;
@@ -1903,7 +1903,7 @@ text-align: center;
     text-align: left;
     padding: 0px 7px;
     border-radius: 8px;
-    left: -191px;
+    left: -198px;
     width: 190px;
     overflow-x: auto;
 }
@@ -2269,3 +2269,44 @@ right: calc(0em - 15px);
     bottom: -40px;
 }
 
+.mobile-flex .dropdown .dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+    top:auto;
+    bottom:55px;
+    margin-bottom:2px
+}
+
+@media screen and (max-width: 450px) {
+    .boundaries-item-left .dropup .dropdown-menu,
+    .navbar-fixed-bottom .dropdown .dropdown-menu {
+     top:auto;
+     bottom:40px;
+     margin-bottom:2px
+ }
+
+}
+
+/* #mapLayer .dropup .dropdown-content{
+    width: 110px !important;
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    display:none;
+    float:left;
+    min-width: 110px !important;
+    padding:5px 0;
+    margin:2px 0 0;
+    font-size:14px;
+    text-align:left;
+    list-style:none;
+    background-color:#fff;
+    -webkit-background-clip:padding-box;
+    background-clip:padding-box;
+    border:1px solid #ccc;
+    border:1px solid rgba(236, 4, 4, 0.15);
+    border-radius:4px;
+    -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
+    box-shadow:0 6px 12px rgba(0,0,0,.175)
+   
+} */

@@ -277,15 +277,15 @@ function footerShow1(id) {
   }
 }
 
-function footerShow2(id) {
-  let allid = [ 'mobile', 'sidebar','boundMobile']
-  document.getElementById(id).classList.toggle("show");
-  for (let i = 0; i < allid.length; i++) {
-    if (allid[i] !== id) {
-      document.getElementById(allid[i]).classList.remove("show");
-    }
-  }
-}
+// function footerShow2(id) {
+//   let allid = [ 'mobile', 'sidebar','boundMobile']
+//   document.getElementById(id).classList.toggle("show");
+//   for (let i = 0; i < allid.length; i++) {
+//     if (allid[i] !== id) {
+//       document.getElementById(allid[i]).classList.remove("show");
+//     }
+//   }
+// }
 
 
 
@@ -345,27 +345,27 @@ $(document).ready(function () {
 
 // tolltip
 
-var list = document.querySelector('.toltip');
-var index;
-var css;
-var index2;
+// var list = document.querySelector('.toltip');
+// var index;
+// var css;
+// var index2;
 
-list.addEventListener('mouseenter', function (ev) {
-  if (ev.target.tagName === 'SPAN') {
-    console.log(ev.target);
-    var rect = ev.target.getBoundingClientRect();
-    var top = rect.top;
-    var bottom = rect.bottom;
-    var left = rect.right;
+// list.addEventListener('mouseenter', function (ev) {
+//   if (ev.target.tagName === 'SPAN') {
+//     console.log(ev.target);
+//     var rect = ev.target.getBoundingClientRect();
+//     var top = rect.top;
+//     var bottom = rect.bottom;
+//     var left = rect.right;
 
-    css = document.getElementById('css');
-    index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
-    index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
-  } else if (css && css.sheet) {
-    css.sheet.removeRule(index)
-    css.sheet.removeRule(index2)
-  }
-}, true); 4
+//     css = document.getElementById('css');
+//     index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
+//     index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
+//   } else if (css && css.sheet) {
+//     css.sheet.removeRule(index)
+//     css.sheet.removeRule(index2)
+//   }
+// }, true); 4
 
 
 // Growth rate show
