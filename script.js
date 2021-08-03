@@ -46,27 +46,6 @@ function growthHide() {
   document.getElementById("growthBtn").style.display = "block";
 }
 
-
-
-// Filter box
-
-// var a = 1;
-// function show_hide() {
-//   console.log(a);
-//   if (a == 1) {
-//     document.getElementById("filterdetail").style.display = "block";
-//     return a = 0;
-//   }
-//   else {
-//     document.getElementById("filterdetail").style.display = "none";
-//     return a = 1;
-//   }
-// }
-
-
-
-
-
 // growth value show
 // Indicators
 $(document).ready(function () {
@@ -268,7 +247,7 @@ function footerShow(id) {
 
 
 function footerShow1(id) {
-  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1', 'bound','boundaries11']
+  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1', 'bound','boundaries11','filterdetail1']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -276,18 +255,6 @@ function footerShow1(id) {
     }
   }
 }
-
-// function footerShow2(id) {
-//   let allid = [ 'mobile', 'sidebar','boundMobile']
-//   document.getElementById(id).classList.toggle("show");
-//   for (let i = 0; i < allid.length; i++) {
-//     if (allid[i] !== id) {
-//       document.getElementById(allid[i]).classList.remove("show");
-//     }
-//   }
-// }
-
-
 
 
 // boundaries function
@@ -299,30 +266,20 @@ function boundaries() {
 function filterShow() {
   document.getElementById("filterdetail").classList.toggle("show");
 }
-function filterShow1() {
-  document.getElementById("filterdetail1").classList.toggle("show");
-}
-
-
-
+// function filterShow1() {
+//   document.getElementById("filterdetail1").classList.toggle("show");
+// }
 
 //checkbox uncheck after refresh
-
 
 $(document).ready(function () {
   $(':checkbox:checked').prop('checked', false);
 });
 
 
-// var radios = document.querySelectorAll('input[type="radio"]:checked');
-// var value = radios.length > 0 ? radios[0].value : null;
-
-
-
-
-function myFunction() {
-  document.getElementById("myDropdown1").classList.toggle("show");
-}
+// function myFunction() {
+//   document.getElementById("myDropdown1").classList.toggle("show");
+// }
 
 
 // acttive class
@@ -343,31 +300,6 @@ $(document).ready(function () {
 
 
 
-// tolltip
-
-// var list = document.querySelector('.toltip');
-// var index;
-// var css;
-// var index2;
-
-// list.addEventListener('mouseenter', function (ev) {
-//   if (ev.target.tagName === 'SPAN') {
-//     console.log(ev.target);
-//     var rect = ev.target.getBoundingClientRect();
-//     var top = rect.top;
-//     var bottom = rect.bottom;
-//     var left = rect.right;
-
-//     css = document.getElementById('css');
-//     index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
-//     index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
-//   } else if (css && css.sheet) {
-//     css.sheet.removeRule(index)
-//     css.sheet.removeRule(index2)
-//   }
-// }, true); 4
-
-
 // Growth rate show
 function growthRadio(event) {
   document.getElementById("demo").innerText = event.target.value;
@@ -385,26 +317,73 @@ function growthRadio(event) {
 
 }
 
-// function toggle(source) {
-//   checkboxes = document.getElementsByName('check1');
-//   document.getElementById('IndomedianIncome').readOnly = true; 
-//   for (var i = 0, n = checkboxes.length; i < n; i++) {
-//     checkboxes[i].checked = source.checked;
-//     console.log('saidul'+source.checked);
-//   }
-// }
 
+// progress bar
 
+var ProgressBar = React.createClass({ displayName: "ProgressBar",
+  getInitialState() {
+    return {
+      current: this.props.current };
 
+  },
+  render() {
+    var { steps, current } = this.props;
+    current = this.state.current;
+    var steps = steps.map((step, idx) => {
+      var active = idx === current ? 'active' : '';
 
+      if (idx < current) {
+        active = 'completed';
+      }
 
+      return(
+        React.createElement("a", { className: `step ${active}`, onClick: () => this.setState({ current: idx }) }, 
+        // React.createElement("i", { className: `fa fa-check ${active}` }), 
+        React.createElement("span", null, step)));
+    });
+    var translate = 100 - 100 / (steps.length - 1) * current;
+    console.log(translate);
+    return(
+      React.createElement("div", { className: "step-progress-bar" }, 
+      React.createElement("div", { className: "bar" }, 
+      React.createElement("div", { className: "bar-inner", style: { transform: `translateX(-${translate}%)` } })),
+      steps));
+  } });
+ReactDOM.render( 
+React.createElement(ProgressBar, { current: 0, steps: ['1%', '10%', '40%', '60%', '80%', '100%'] }),
+document.getElementById('progress_filter')
+);
 
+var ProgressBar = React.createClass({ displayName: "ProgressBar",
+  getInitialState() {
+    return {
+      current: this.props.current };
 
+  },
+  render() {
+    var { steps, current } = this.props;
+    current = this.state.current;
+    var steps = steps.map((step, idx) => {
+      var active = idx === current ? 'active' : '';
 
+      if (idx < current) {
+        active = 'completed';
+      }
 
-
-
-
-
-
-
+      return(
+        React.createElement("a", { className: `step ${active}`, onClick: () => this.setState({ current: idx }) }, 
+        // React.createElement("i", { className: `fa fa-check ${active}` }), 
+        React.createElement("span", null, step)));
+    });
+    var translate = 100 - 100 / (steps.length - 1) * current;
+    console.log(translate);
+    return(
+      React.createElement("div", { className: "step-progress-bar" }, 
+      React.createElement("div", { className: "bar" }, 
+      React.createElement("div", { className: "bar-inner", style: { transform: `translateX(-${translate}%)` } })),
+      steps));
+  } });
+ReactDOM.render( 
+React.createElement(ProgressBar, { current: 0, steps: ['1%', '10%', '40%', '60%', '80%', '100%'] }),
+document.getElementById('progress_filter1')
+);

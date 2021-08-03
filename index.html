@@ -159,7 +159,7 @@
             <div style="max-width: 500px; display: block; margin: auto;">
               <div class="game-progress-bar-container game-count-5">
                 <div class="progress-steps-section">
-                  <ul class="progress-steps">
+                  <!-- <ul class="progress-steps">
                     <li>
                       <div class="progress-step-item"></div>
                       <p>1%</p>
@@ -185,10 +185,12 @@
                       <div class="progress-step-item"></div>
                       <p>100%</p>
                     </li>
-                  </ul>
-                  <div class="progress-steps-connector game-3">
-                    <div class="progress-indicator"></div>
+                  </ul> -->
+                  <div class="progressBox" id="progress_filter">
                   </div>
+                  <!-- <div class="progress-steps-connector game-3">
+                    <div class="progress-indicator"></div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -834,6 +836,7 @@
               <div class="mobile-flex borderOff">
 
                 <!-- Sidebar -->
+
                 <div class="dropdown">
                   <div class="btn-group dropup keep-inside-clicks-open">
                     <a type="button" class="dropdown-toggle dropbtn forecast" id="dropdownMenuClickableInside"
@@ -844,47 +847,18 @@
                       <a href="#">Properties</a>
                       <a href="index.html">Map</a>
                       <a href="compare.html">Compare</a>
-                      <a onclick="filterShow1()">Filter</a>
-                      <div class="filterdetail dropdown-content" id="filterdetail1">
-                        <div style="max-width: 500px; display: block; margin: auto;">
-                          <div class="game-progress-bar-container game-count-5">
-                            <div class="progress-steps-section">
-                              <ul class="progress-steps">
-                                <li>
-                                  <div class="progress-step-item"></div>
-                                  <p>1%</p>
-                                </li>
-                                <li>
-                                  <div class="progress-step-item">
-                                  </div>
-                                  <p>10%</p>
-                                </li>
-                                <li class="game-active">
-                                  <div class="progress-step-item"></div>
-                                  <p>40%</p>
-                                </li>
-                                <li>
-                                  <div class="progress-step-item"></div>
-                                  <p>60%</p>
-                                </li>
-                                <li>
-                                  <div class="progress-step-item"></div>
-                                  <p>80%</p>
-                                </li>
-                                <li>
-                                  <div class="progress-step-item"></div>
-                                  <p>100%</p>
-                                </li>
-                              </ul>
-                              <div class="progress-steps-connector game-3">
-                                <div class="progress-indicator"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <p>Filter to the top local markets based upon your custom search, instantly</p>
-                      </div>
+                     
                       <a href="#" onclick="openNav()">Report</a>
+                      <div class="dropdown">
+                        <a onclick="footerShow1('filterdetail1')" class="dropbtn forecast">
+                          <p id="ForecastHide"><i class="fa fa-file"></i> Forecast</p>
+                        </a>
+                        <div id="filterdetail1" class="filterdetail forecastHeight">
+                         <p>sdsd</p>
+                         <div class="progressBox" id="progress_filter1">
+                        </div>  
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1393,13 +1367,13 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js'></script>
 
+  <script src='https://fb.me/react-15.1.0.min.js'></script>
+  <script src='https://fb.me/react-dom-15.1.0.min.js'></script>
+
   <script>
     $(document).on('click.bs.dropup.data-api', '.dropup.keep-inside-clicks-open', function (e) {
       e.stopPropagation();
     });
-
-
-
     document.getElementById('12months').onclick = function () {
       document.getElementById("demo").innerText = '12-Months Forecast';
       document.getElementById("demo1").innerText = '12-Months Forecast';

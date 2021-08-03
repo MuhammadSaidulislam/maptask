@@ -663,6 +663,92 @@ border-left: 2px solid #e1e1e1;
     font-size: 12px;
 }
 
+.progressBox {
+    width: 100%;
+    background-color: transparent;
+    /* padding: 80px 0px; */
+   }
+   
+   .step-progress-bar {
+     display: inline-block;
+     position: relative;
+     font-size: 0;
+   }
+   .step-progress-bar .bar {
+     font-size: 1rem;
+     position: absolute;
+     height: 0.25em;
+     background: #fff;
+     top: 50%;
+     left: 0.675em;
+     right: 0.675em;
+     margin-top: -0.125em;
+     overflow: hidden;
+   }
+   .step-progress-bar .bar .bar-inner {
+     background: #4C84C5;
+     height: 100%;
+     width: 100%;
+     transform-origin: left;
+     transition: transform 400ms ease-in-out;
+   }
+   .step-progress-bar .step {
+     font-size: 1rem;
+     display: inline-block;
+     width: 10px;
+     height: 10px;
+     background: white;
+     margin-left: 35px;
+     border-radius: 50%;
+     border: 0.25em solid #fff;
+     position: relative;
+     cursor: pointer;
+   }
+   .step-progress-bar .step i {
+     color: gray;
+     position: absolute;
+     left: -0.125em;
+     top: -0.125em;
+     transform: scale(0);
+     transition: transform 1s cubic-bezier(0.29, 0.93, 0.87, 1.26);
+   }
+   .step-progress-bar .step i.completed {
+     color: white;
+     transform: scale(1);
+     transition: transform 300ms cubic-bezier(0.29, 0.93, 0.87, 1.26);
+   }
+   .step-progress-bar .step.active {
+     border-color: #4C84C5;
+     background-color: #4C84C5;
+   }
+   .step-progress-bar .step.active:after {
+     transform: scaleX(1);
+   }
+   .step-progress-bar .step.completed {
+     background: #4C84C5;
+     border-color: #4C84C5;
+   }
+   .step-progress-bar .step.completed:after {
+     transform: scaleX(1);
+   }
+   .step-progress-bar .step:first-of-type {
+     margin-left: 0;
+   }
+   .step-progress-bar .step:hover span:after {
+     transform: scaleX(1);
+     opacity: 1;
+   }
+   .step-progress-bar .step span {
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     margin-top: 0.625em;
+     font-size: 11px;
+     transform: translateX(-50%);
+     white-space: nowrap;
+     color: #fff;
+   }
+
 .game-progress-bar-container {
     width: 100%;
     position: relative;
@@ -1930,7 +2016,19 @@ text-align: center;
 }
 
 /* Mobile display */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 692px) {
+    .step-progress-bar .step {
+        font-size: 1rem;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: white;
+        margin-left: 23px;
+        border-radius: 50%;
+        border: 0.25em solid #fff;
+        position: relative;
+        cursor: pointer;
+      }
     #growthBox hr {
         margin: 20px 0px;
     }
@@ -2310,3 +2408,18 @@ right: calc(0em - 15px);
     box-shadow:0 6px 12px rgba(0,0,0,.175)
    
 } */
+
+@media screen and (max-width: 310px) {
+    #positionSet {
+        position: fixed;
+        bottom: 58px;
+        left: 32%;
+        right: 0;
+        transform: translate(-50%,0);
+        padding-top: 200px;
+        z-index: 999;
+        width: 125px;
+    }
+}
+
+

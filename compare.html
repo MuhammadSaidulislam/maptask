@@ -18,7 +18,6 @@
  
   <nav class="navbar navbar-default">
     <div class="container-fluid marginOff">
-      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
           data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -47,50 +46,63 @@
           <li class="form-group">
             <div class="form-check paddOff">
               <p>Select Time Period</p>
-              <input class="form-check-input" type="checkbox" value="" id="yearly">
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio" value="2021 Yearly Data"
+                id="yearly" name="navbar">
               <label class="form-check-label" for="yearly">
                 2021 Yearly Data
               </label>
             </div>
-
           </li>
-          <li class="form-group NavmarginSet">
+          <li class="form-group NavmarginSet growthNav">
             <div class="form-check">
-              <label class="form-check-label" style="color:#4C84C5;">
+              <label class="form-check-label" style="color:#000000;">
+                <p>OR</p>
                 <span id="growthcc">Growth Last:</span>
-                <span id="forecastcc">ForeCast Last:</span>
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="6month">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 3-Months" id="3month" name="navbar">
+              <label class="form-check-label check" for="3month">
+                3-Months
+              </label>
+            </div>
+          </li>
+          <li class="form-group NavmarginSet">
+            <div class="form-check">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 6-Months" id="6month" name="navbar">
               <label class="form-check-label check" for="6month">
-                6 Months
+                6-Months
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="12month">
+              <input class="form-check-input check" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 12-Months" id="12month" name="navbar">
               <label class="form-check-label check" for="12month">
-                12 Months
+                12-Months
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="24month">
-              <label class="form-check-label check" for="24month">
-                24 Months
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 24-Months" id="24month" name="navbar">
+              <label class="form-check-label" for="24month">
+                24-Months
               </label>
             </div>
           </li>
           <li class="form-group NavmarginSet">
             <div class="form-check">
-              <input class="form-check-input check" type="checkbox" value="" id="36month">
-              <label class="form-check-label check" for="36month">
-                36 Months
+              <input class="form-check-input" onclick="growthRadio(event)" type="radio"
+                value="Growth Rate: Last 36-Months" id="36month" name="navbar">
+              <label class="form-check-label" for="36month">
+                36-Months
               </label>
             </div>
           </li>
@@ -98,7 +110,6 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  
 
   <div id="wrapper" class="active">
 
