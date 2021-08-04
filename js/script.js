@@ -46,6 +46,27 @@ function growthHide() {
   document.getElementById("growthBtn").style.display = "block";
 }
 
+
+
+// Filter box
+
+// var a = 1;
+// function show_hide() {
+//   console.log(a);
+//   if (a == 1) {
+//     document.getElementById("filterdetail").style.display = "block";
+//     return a = 0;
+//   }
+//   else {
+//     document.getElementById("filterdetail").style.display = "none";
+//     return a = 1;
+//   }
+// }
+
+
+
+
+
 // growth value show
 // Indicators
 $(document).ready(function () {
@@ -247,7 +268,7 @@ function footerShow(id) {
 
 
 function footerShow1(id) {
-  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1', 'bound','boundaries11','filterdetail1']
+  let allid = ['forecast1', 'indicators1', 'housing1', 'community1', 'enroll1', 'risk1', 'bound','boundaries11']
   document.getElementById(id).classList.toggle("show");
   for (let i = 0; i < allid.length; i++) {
     if (allid[i] !== id) {
@@ -255,6 +276,18 @@ function footerShow1(id) {
     }
   }
 }
+
+// function footerShow2(id) {
+//   let allid = [ 'mobile', 'sidebar','boundMobile']
+//   document.getElementById(id).classList.toggle("show");
+//   for (let i = 0; i < allid.length; i++) {
+//     if (allid[i] !== id) {
+//       document.getElementById(allid[i]).classList.remove("show");
+//     }
+//   }
+// }
+
+
 
 
 // boundaries function
@@ -266,20 +299,30 @@ function boundaries() {
 function filterShow() {
   document.getElementById("filterdetail").classList.toggle("show");
 }
-// function filterShow1() {
-//   document.getElementById("filterdetail1").classList.toggle("show");
-// }
+function filterShow1() {
+  document.getElementById("filterdetail1").classList.toggle("show");
+}
+
+
+
 
 //checkbox uncheck after refresh
+
 
 $(document).ready(function () {
   $(':checkbox:checked').prop('checked', false);
 });
 
 
-// function myFunction() {
-//   document.getElementById("myDropdown1").classList.toggle("show");
-// }
+// var radios = document.querySelectorAll('input[type="radio"]:checked');
+// var value = radios.length > 0 ? radios[0].value : null;
+
+
+
+
+function myFunction() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}
 
 
 // acttive class
@@ -300,6 +343,31 @@ $(document).ready(function () {
 
 
 
+// tolltip
+
+// var list = document.querySelector('.toltip');
+// var index;
+// var css;
+// var index2;
+
+// list.addEventListener('mouseenter', function (ev) {
+//   if (ev.target.tagName === 'SPAN') {
+//     console.log(ev.target);
+//     var rect = ev.target.getBoundingClientRect();
+//     var top = rect.top;
+//     var bottom = rect.bottom;
+//     var left = rect.right;
+
+//     css = document.getElementById('css');
+//     index = css.sheet.insertRule(`.tip span::before{left:${left - 50}px;top:${top}px}`, 0);
+//     index2 = css.sheet.insertRule(`.tip span::after{left:${left - 50}px;top:${top + 20}px}`, 0);
+//   } else if (css && css.sheet) {
+//     css.sheet.removeRule(index)
+//     css.sheet.removeRule(index2)
+//   }
+// }, true); 4
+
+
 // Growth rate show
 function growthRadio(event) {
   document.getElementById("demo").innerText = event.target.value;
@@ -316,7 +384,6 @@ function growthRadio(event) {
       }
 
 }
-
 
 // progress bar
 

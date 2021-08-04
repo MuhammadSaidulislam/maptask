@@ -352,7 +352,7 @@ height: 100%;
     bottom: 50px;
     left: 50%;
     transform: translate(-50%, 0);
-    padding-top: 200px;
+    /* padding-top: 200px; */
     z-index: 999;
     width: 500px;
 }
@@ -661,6 +661,7 @@ border-left: 2px solid #e1e1e1;
 .filterdetail p {
     color: #fff;
     font-size: 12px;
+    margin-top: 20px;
 }
 
 .progressBox {
@@ -2023,7 +2024,7 @@ text-align: center;
         width: 10px;
         height: 10px;
         background: white;
-        margin-left: 23px;
+        margin-left: 21px;
         border-radius: 50%;
         border: 0.25em solid #fff;
         position: relative;
@@ -2099,7 +2100,7 @@ text-align: center;
         left: 50%;
         right: 0;
         /* transform: translate(-50%,0); */
-        padding-top: 200px;
+        /* padding-top: 2px; */
         z-index: 999;
         width: 125px;
     }
@@ -2416,10 +2417,17 @@ right: calc(0em - 15px);
         left: 32%;
         right: 0;
         transform: translate(-50%,0);
-        padding-top: 200px;
+        /* padding-top: 200px; */
         z-index: 999;
         width: 125px;
     }
 }
 
 
+div.inline { 
+    float:left; 
+margin-left: 4px;
+}
+.inline .dropdown{
+    width: auto;
+}
