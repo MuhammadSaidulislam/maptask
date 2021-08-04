@@ -661,7 +661,6 @@ border-left: 2px solid #e1e1e1;
 .filterdetail p {
     color: #fff;
     font-size: 12px;
-    margin-top: 20px;
 }
 
 .progressBox {
@@ -2029,6 +2028,7 @@ text-align: center;
         border: 0.25em solid #fff;
         position: relative;
         cursor: pointer;
+        padding: 0px;
       }
     #growthBox hr {
         margin: 20px 0px;
